@@ -19,7 +19,7 @@ class App extends React.Component {
 					home: { screen: HomeScreen },
 					homeoffer: { screen: HomeOffer }
 				}, {
-					headerMode: 'none',
+					headerMode: 'float',
 					mode: 'modal'
 				})
 			},

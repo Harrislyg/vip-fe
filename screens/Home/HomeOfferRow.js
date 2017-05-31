@@ -15,16 +15,17 @@ class HomeOfferRow extends Component {
 		const { company } = this.props.homeOffer;
 		return (
 			<Card
+				key={this.props.homeOffer.company}
 				width={SCREEN_WIDTH / 1.2}
 			>
-				<Text style={{ marginBottom: SCREEN_HEIGHT / 8, textAlign: 'center' }}>
+				<Text style={styles.textStyle}>
 					{company}
 				</Text>
 
 				<Button
 					icon={{ name: 'shop' }}
 					backgroundColor="#03A9F4"
-					title="View Now!"
+					title="Activate"
 					onPress={this.onNavigate.bind(this)}
 				/>
 
@@ -32,5 +33,12 @@ class HomeOfferRow extends Component {
 		);
 	}
 }
+
+const styles = {
+	textStyle: {
+		alignSelf: 'center',
+		marginBottom: SCREEN_HEIGHT / 8
+	}
+};
 
 export default HomeOfferRow;

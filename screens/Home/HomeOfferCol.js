@@ -7,19 +7,19 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class HomeOfferRow extends Component {
 	render () {
-		const { company } = this.props.homeOffer;
+		const { company } = this.props.homeOffer.item;
 		return (
 			<Card
 				containerStyle={styles.cardStyle}
 			>
-				<Text style={{ marginBottom: SCREEN_HEIGHT / 8, textAlign: 'center' }}>
+				<Text style={styles.textStyle}>
 					{company}
 				</Text>
 
 				<Button
 					icon={{ name: 'shop' }}
 					backgroundColor="#03A9F4"
-					title="Buy"
+					title="Activate"
 				/>
 
 			</Card>
@@ -29,8 +29,13 @@ class HomeOfferRow extends Component {
 
 const styles = {
 	cardStyle: {
+		alignItems: 'center',
 		marginBottom: 15,
 		width: SCREEN_WIDTH / 2.4
+	},
+	textStyle: {
+		marginBottom: SCREEN_HEIGHT / 8,
+		alignSelf: 'center'
 	}
 };
 

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ListView, ScrollView, Dimensions } from 'react-native';
+import { View, Text, ListView, ScrollView, Dimensions, FlatList } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import { homeOffersFetch } from '../../actions'
 import HomeOfferRow from './HomeOfferRow'
@@ -23,68 +23,58 @@ class HomeScreen extends Component {
 	componentWillMount () {
 		this.props.homeOffersFetch()
 
-		// Provide blank datasoure to avoid error
-		this.createDataSource(this.props)
-
 	}
 
-	componentWillReceiveProps (nextProps) {
-    // Receive the the props that has been fetched from homeOffersFetch
-    this.createDataSource(nextProps)
-
-  }
-
-	createDataSource ({ homeOffer }) {
-    const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    })
-    this.dataSource = ds.cloneWithRows(homeOffer)
-
-  }
-
-	renderRow (homeOffer) {
-    return <HomeOfferRow homeOffer={homeOffer} />
-  }
-
 	renderCol (homeOffer) {
-    return <HomeOfferCol homeOffer={homeOffer} />
+    return <HomeOfferCol key={homeOffer.company} homeOffer={homeOffer} />
+
   }
 
 	render () {
-		console.log('Main', this.props.navigation);
 		return (
 			<ScrollView
-				style={styles.ScrollView}
+				style={styles.scrollView}
 				showsVerticalScrollIndicator = {false}
 			>
-				<ListView
-					horizontal = {true}
-	        enableEmptySections
-	        dataSource={this.dataSource}
-	        renderRow={(data) => <HomeOfferRow homeOffer={data} onNavigate={this.props.navigation}/>}
+				<FlatList
+					contentContainerStyle={styles.listViewRow}
+					horizontal={true}
+					enableEmptySections
+	        data={this.props.homeOffer}
+	        renderItem={({item}) => <HomeOfferRow homeOffer={item} onNavigate={this.props.navigation} />}
+					keyExtractor={item => item.company}
 					showsHorizontalScrollIndicator={false}
 					alwaysBounceHorizontal={true}
       	/>
-				<ListView
-					contentContainerStyle={styles.listView}
+				<FlatList
+					contentContainerStyle={styles.listViewCol}
+					keyExtractor={item => item.company}
 					enableEmptySections
-					dataSource={this.dataSource}
-	        renderRow={this.renderCol}
+					data={this.props.homeOffer}
+	        renderItem={this.renderCol}
 				/>
 			</ScrollView>
 		);
+
 	}
+
 }
 
 const styles = {
-	ScrollView: {
+	scrollView: {
 		backgroundColor: '#fff'
 	},
 
-	listView: {
+	listViewCol: {
 		marginTop: 100,
   	flexDirection: 'row',
-  	flexWrap: 'wrap'
+  	flexWrap: 'wrap',
+		justifyContent: 'center'
+	},
+
+	listViewRow: {
+		flexDirection: 'row',
+		justifyContent: 'center'
 	}
 }
 
