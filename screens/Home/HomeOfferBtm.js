@@ -6,12 +6,12 @@ import { Card, Button } from 'react-native-elements';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class HomeOfferRow extends Component {
+class HomeOfferBtm extends Component {
 	onNavigate () {
 		this.props.onNavigate.navigate('homeoffer');
 	}
 	render () {
-		console.log('Row', this.props.onNavigate);
+		// console.log('Row', this.props.onNavigate);
 		const { company } = this.props.homeOffer;
 		return (
 			<Card
@@ -41,4 +41,4 @@ const styles = {
 	}
 };
 
-export default HomeOfferRow;
+export default HomeOfferBtm;

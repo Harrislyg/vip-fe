@@ -1,12 +1,11 @@
 import _ from 'lodash';
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ListView, ScrollView, Dimensions, FlatList } from 'react-native';
+import { View, Text, ScrollView, Dimensions, FlatList } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import { homeOffersFetch } from '../../actions'
-import HomeOfferRow from './HomeOfferRow'
-import HomeOfferCol from './HomeOfferCol'
-
+import HomeOfferTop from './HomeOfferTop'
+import HomeOfferBtm from './HomeOfferBtm'
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
@@ -25,8 +24,8 @@ class HomeScreen extends Component {
 
 	}
 
-	renderCol (homeOffer) {
-    return <HomeOfferCol key={homeOffer.company} homeOffer={homeOffer} />
+	renderTopRow (homeOffer) {
+    return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
 
   }
 
@@ -36,23 +35,32 @@ class HomeScreen extends Component {
 				style={styles.scrollView}
 				showsVerticalScrollIndicator = {false}
 			>
+				<Text style={styles.textStyle}>
+					Flash Offers
+				</Text>
 				<FlatList
-					contentContainerStyle={styles.listViewRow}
+					contentContainerStyle={styles.topRowList}
+					horizontal={true}
+					keyExtractor={item => item.company}
+					enableEmptySections
+					data={this.props.homeOffer}
+	        renderItem={this.renderTopRow}
+					showsHorizontalScrollIndicator={false}
+					alwaysBounceHorizontal={true}
+				/>
+				<Text style={styles.textStyle}>
+					Earn Bonuses
+				</Text>
+				<FlatList
+					contentContainerStyle={styles.btmRowList}
 					horizontal={true}
 					enableEmptySections
 	        data={this.props.homeOffer}
-	        renderItem={({item}) => <HomeOfferRow homeOffer={item} onNavigate={this.props.navigation} />}
+	        renderItem={({item}) => <HomeOfferBtm homeOffer={item} onNavigate={this.props.navigation} />}
 					keyExtractor={item => item.company}
 					showsHorizontalScrollIndicator={false}
 					alwaysBounceHorizontal={true}
       	/>
-				<FlatList
-					contentContainerStyle={styles.listViewCol}
-					keyExtractor={item => item.company}
-					enableEmptySections
-					data={this.props.homeOffer}
-	        renderItem={this.renderCol}
-				/>
 			</ScrollView>
 		);
 
@@ -65,22 +73,25 @@ const styles = {
 		backgroundColor: '#fff'
 	},
 
-	listViewCol: {
-		marginTop: 100,
+	topRowList: {
   	flexDirection: 'row',
   	flexWrap: 'wrap',
 		justifyContent: 'center'
 	},
 
-	listViewRow: {
+	btmRowList: {
 		flexDirection: 'row',
 		justifyContent: 'center'
+	},
+
+	textStyle: {
+		marginTop: 10,
+		marginLeft: 12
 	}
 }
 
 const mapStateToProps = state => {
   const homeOffer = state.home
-	console.log('mapStateToProps', state.home)
   return { homeOffer }
 
 }

@@ -5,15 +5,27 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 
 import store from './store';
-import OffersScreen from './screens/OffersScreen';
-import RewardsScreen from './screens/RewardsScreen';
+import OffersScreen from './screens/Offers/OffersScreen';
+import RewardsScreen from './screens/Rewards/RewardsScreen';
 import HomeScreen from './screens/Home/HomeScreen';
 import HomeOffer from './screens/Home/HomeOffer';
-import ProfileScreen from './screens/ProfileScreen';
+import FeedScreen from './screens/Feed/FeedScreen';
+import FeedCardDetail from './screens/Feed/FeedCardDetail';
 
 class App extends React.Component {
 	render () {
 		const MainNavigator = TabNavigator({
+			feed: {
+				screen: StackNavigator({
+					feed: { screen: FeedScreen },
+					feedDetail: { screen: FeedCardDetail }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			},
+			offers: { screen: OffersScreen },
+			rewards: { screen: RewardsScreen },
 			home: {
 				screen: StackNavigator({
 					home: { screen: HomeScreen },
@@ -22,10 +34,7 @@ class App extends React.Component {
 					headerMode: 'float',
 					mode: 'modal'
 				})
-			},
-			offers: { screen: OffersScreen },
-			rewards: { screen: RewardsScreen },
-			profile: { screen: ProfileScreen }
+			}
 		}, {
 			// tabBarPosition is an Android configuration
 			tabBarPosition: 'bottom',
