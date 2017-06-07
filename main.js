@@ -11,35 +11,46 @@ import HomeScreen from './screens/Home/HomeScreen';
 import HomeOffer from './screens/Home/HomeOffer';
 import FeedScreen from './screens/Feed/FeedScreen';
 import FeedCardDetail from './screens/Feed/FeedCardDetail';
+import AuthScreen from './screens/Auth/AuthScreen';
 
 class App extends React.Component {
 	render () {
 		const MainNavigator = TabNavigator({
-			feed: {
-				screen: StackNavigator({
-					feed: { screen: FeedScreen },
-					feedDetail: { screen: FeedCardDetail }
+			auth: { screen: AuthScreen },
+			main: {
+				screen: TabNavigator({
+					feed: {
+						screen: StackNavigator({
+							feed: { screen: FeedScreen },
+							feedDetail: { screen: FeedCardDetail }
+						}, {
+							headerMode: 'float',
+							mode: 'modal'
+						})
+					},
+					offers: { screen: OffersScreen },
+					rewards: { screen: RewardsScreen },
+					home: {
+						screen: StackNavigator({
+							home: { screen: HomeScreen },
+							homeoffer: { screen: HomeOffer }
+						}, {
+							headerMode: 'float',
+							mode: 'modal'
+						})
+					}
 				}, {
-					headerMode: 'float',
-					mode: 'modal'
-				})
-			},
-			offers: { screen: OffersScreen },
-			rewards: { screen: RewardsScreen },
-			home: {
-				screen: StackNavigator({
-					home: { screen: HomeScreen },
-					homeoffer: { screen: HomeOffer }
-				}, {
-					headerMode: 'float',
-					mode: 'modal'
+					// tabBarPosition is an Android configuration
+					tabBarPosition: 'bottom',
+					tabBarOptions: {
+						labelStyle: { fontSize: 10, marginTop: -5 }
+					},
+					lazy: true
 				})
 			}
 		}, {
-			// tabBarPosition is an Android configuration
-			tabBarPosition: 'bottom',
-			tabBarOptions: {
-				labelStyle: { fontSize: 10, marginTop: -5 }
+			navigationOptions: {
+				tabBarVisible: false
 			},
 			lazy: true
 		});
