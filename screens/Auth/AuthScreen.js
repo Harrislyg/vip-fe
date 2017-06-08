@@ -1,9 +1,11 @@
 import React, {Component } from 'react';
 import { View, Text, AlertIOS, TouchableHighlight } from 'react-native';
-import { Button } from 'react-native-elements';
 import TouchID from 'react-native-touch-id';
 
 class AuthScreen extends Component {
+	componentWillMount () {
+		this.props.navigation.navigate('feed');
+	}
 
 	_pressHandler () {
 		TouchID.authenticate('to demo this react-native component')
@@ -28,7 +30,7 @@ class AuthScreen extends Component {
 				<TouchableHighlight
 					style={styles.btn}
 					onPress={this._clickHandler}
-					underlayColor="#0380BE"
+					underlayColor='#0380BE'
 					activeOpacity={1}
 				>
 					<Text style={{
@@ -42,6 +44,7 @@ class AuthScreen extends Component {
 		);
 	}
 	_clickHandler () {
+		console.log(TouchID);
 		TouchID.isSupported()
 		.then(authenticate)
 		.catch(error => {
@@ -81,18 +84,6 @@ const styles = {
 	}
 };
 
-const errors = {
-	"LAErrorAuthenticationFailed": "Authentication was not successful because the user failed to provide valid credentials.",
-	"LAErrorUserCancel": "Authentication was canceled by the user—for example, the user tapped Cancel in the dialog.",
-	"LAErrorUserFallback": "Authentication was canceled because the user tapped the fallback button (Enter Password).",
-	"LAErrorSystemCancel": "Authentication was canceled by system—for example, if another application came to foreground while the authentication dialog was up.",
-	"LAErrorPasscodeNotSet": "Authentication could not start because the passcode is not set on the device.",
-	"LAErrorTouchIDNotAvailable": "Authentication could not start because Touch ID is not available on the device",
-	"LAErrorTouchIDNotEnrolled": "Authentication could not start because Touch ID has no enrolled fingers.",
-	"RCTTouchIDUnknownError": "Could not authenticate for an unknown reason.",
-	"RCTTouchIDNotSupported": "Device does not support Touch ID."
-};
-
 function authenticate () {
 	return TouchID.authenticate()
 		.then(success => {
@@ -103,20 +94,5 @@ function authenticate () {
 			AlertIOS.alert(error.message);
 		});
 }
-
-// passCodeAuth module allows the user to log in using his iphone's numeric password
-// function passcodeAuth () {
-// 	return PasscodeAuth.isSupported()
-// 	.then(() => {
-// 		return PasscodeAuth.authenticate();
-// 	})
-// 	.then(success => {
-// 		AlertIOS.alert('Authenticated Successfully');
-// 	})
-//   .catch(error => {
-// 	console.log(error);
-// 	AlertIOS.alert(error.message);
-//   });
-// }
 
 export default AuthScreen;

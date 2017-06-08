@@ -11,6 +11,10 @@ class FeedScreen extends Component {
 		title: 'Feed',
 		tabBarIcon: ({ tintColor }) => {
 			return <Icon name="casino" size={29} color={tintColor} />
+		},
+		headerTintColor: '#fff',
+		headerStyle: {
+			backgroundColor: '#21CE99'
 		}
 
 	}
@@ -32,7 +36,7 @@ class FeedScreen extends Component {
 				showsVerticalScrollIndicator = {false}
 			>
 				<Text style={styles.textStyle}>
-					Points Collected
+					Bonus Points
 				</Text>
 				<FlatList
 					contentContainerStyle={styles.feedCardStyle}
@@ -54,8 +58,7 @@ const styles = {
 	},
 
 	feedCardStyle: {
-		alignSelf: 'center',
-		justifyContent: 'center'
+		flexDirection: 'column'
 	},
 
 	textStyle: {

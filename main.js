@@ -16,44 +16,43 @@ import AuthScreen from './screens/Auth/AuthScreen';
 class App extends React.Component {
 	render () {
 		const MainNavigator = TabNavigator({
-			auth: { screen: AuthScreen },
-			main: {
-				screen: TabNavigator({
-					feed: {
-						screen: StackNavigator({
-							feed: { screen: FeedScreen },
-							feedDetail: { screen: FeedCardDetail }
-						}, {
-							headerMode: 'float',
-							mode: 'modal'
-						})
-					},
-					offers: { screen: OffersScreen },
-					rewards: { screen: RewardsScreen },
-					home: {
-						screen: StackNavigator({
-							home: { screen: HomeScreen },
-							homeoffer: { screen: HomeOffer }
-						}, {
-							headerMode: 'float',
-							mode: 'modal'
-						})
-					}
+			// auth: { screen: AuthScreen },
+			// main: {
+			// 	screen: TabNavigator({
+			feed: {
+				screen: StackNavigator({
+					feed: { screen: FeedScreen },
+					feedDetail: { screen: FeedCardDetail }
 				}, {
-					// tabBarPosition is an Android configuration
-					tabBarPosition: 'bottom',
-					tabBarOptions: {
-						labelStyle: { fontSize: 10, marginTop: -5 }
-					},
-					lazy: true
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			},
+			offers: { screen: OffersScreen },
+			rewards: { screen: RewardsScreen },
+			home: {
+				screen: StackNavigator({
+					home: { screen: HomeScreen },
+					homeoffer: { screen: HomeOffer }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
 				})
 			}
 		}, {
-			navigationOptions: {
-				tabBarVisible: false
+			// tabBarPosition is an Android configuration
+			tabBarPosition: 'bottom',
+			tabBarOptions: {
+				labelStyle: { fontSize: 10, marginTop: -5 }
 			},
 			lazy: true
 		});
+		// }, {
+		// 	navigationOptions: {
+		// 		tabBarVisible: false
+		// 	},
+		// 	lazy: true
+		// });
 
 		return (
 			<Provider store={store}>
