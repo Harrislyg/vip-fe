@@ -36,16 +36,17 @@ class FeedScreen extends Component {
 				showsVerticalScrollIndicator = {false}
 			>
 				<Text style={styles.textStyle}>
-					Bonus Points
+					UNLOCK REWARDS
 				</Text>
 				<FlatList
 					contentContainerStyle={styles.feedCardStyle}
+					horizontal={true}
 					enableEmptySections
 	        data={this.props.homeOffer}
 	        renderItem={({item}) => <FeedCard feedCard={item} onNavigate={this.props.navigation} />}
 					keyExtractor={item => item.company}
-					showsVerticalScrollIndicator={false}
-					alwaysBounceVertical={true}
+					showsHorizontalScrollIndicator={false}
+					alwaysBounceHorizontal={true}
       	/>
 			</ScrollView>
 		);
@@ -58,12 +59,14 @@ const styles = {
 	},
 
 	feedCardStyle: {
-		flexDirection: 'column'
+		flexDirection: 'row',
+		justifyContent: 'center'
 	},
 
 	textStyle: {
 		marginTop: 15,
-		marginLeft: 12
+		marginLeft: 12,
+		color: '#8F8E94'
 	}
 }
 

@@ -6,12 +6,13 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class FeedCard extends Component {
-	onNavigate () {
-		this.props.onNavigate.navigate('feedDetail');
-	}
+	// onNavigate () {
+	// 	this.props.onNavigate.navigate('feedDetail');
+	// }
 	render () {
 		// console.log('Row', this.props.onNavigate);
 		const { company } = this.props.feedCard;
+		console.log(company);
 		return (
 			<Card
 				containerStyle={styles.cardStyle}
@@ -24,24 +25,12 @@ class FeedCard extends Component {
 					key={this.props.feedCard.company}
 				>
 					<View style={styles.overlayStyle}>
-
 						<View style={styles.viewStyle}>
-
 							<Text style={styles.textStyle}>
 								{company}
 							</Text>
 
-							<Button
-								buttonStyle={styles.buttonStyle}
-								backgroundColor="rgba(0,0,0,0)"
-								fontSize={13}
-								fontWeight={'bold'}
-								title="EARN BONUS"
-								onPress={this.onNavigate.bind(this)}
-							/>
-
 						</View>
-
 					</View>
 
 				</Image>
@@ -54,39 +43,45 @@ class FeedCard extends Component {
 const styles = {
 	cardStyle: {
 		alignSelf: 'center',
-		width: SCREEN_WIDTH / 1.2,
+		width: SCREEN_WIDTH / 3.3,
+		height: SCREEN_HEIGHT / 6,
 		borderRadius: 10,
-		marginBottom: 5,
+		marginRight: 2,
 		backgroundColor: '#000',
 		padding: 0
 	},
 
 	overlayStyle: {
 		alignSelf: 'center',
-		width: SCREEN_WIDTH / 1.2,
-		height: undefined,
+		justifyContent: 'center',
+		width: SCREEN_WIDTH / 3.3,
+		height: SCREEN_HEIGHT / 6,
 		borderRadius: 10,
-		backgroundColor: 'rgba(0,0,0,0.4)'
+		backgroundColor: 'rgba(0,0,0,0.35)',
+		padding: 0,
+		margin: 0
 	},
 
 	viewStyle: {
 		margin: 18
-
 	},
 
 	textStyle: {
 		alignSelf: 'center',
-		marginBottom: SCREEN_HEIGHT / 8,
 		color: '#fff',
-		fontSize: 21,
-		fontWeight: 'bold'
+		fontSize: 25,
+		fontWeight: 'bold',
+		margin: -14
+
 	},
 
 	imageStyle: {
 		alignSelf: 'center',
-		width: SCREEN_WIDTH / 1.2,
-		height: undefined,
-		borderRadius: 10
+		width: SCREEN_WIDTH / 3.3,
+		height: SCREEN_HEIGHT / 6,
+		borderRadius: 10,
+		padding: 0,
+		margin: 0
 	},
 
 	buttonStyle: {
