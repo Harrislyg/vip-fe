@@ -66,7 +66,8 @@ const styles = {
 	textStyle: {
 		marginTop: 15,
 		marginLeft: 12,
-		color: '#8F8E94'
+		color: '#8F8E94',
+		fontWeight: '600'
 	}
 }
 
