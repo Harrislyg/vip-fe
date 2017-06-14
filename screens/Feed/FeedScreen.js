@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { View, Text, ScrollView, Dimensions, FlatList } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import FeedCard from './FeedCard'
+import FeedOffersCard from './FeedOffersCard'
 import { homeOffersFetch } from '../../actions'
 
 
@@ -39,7 +40,7 @@ class FeedScreen extends Component {
 					UNLOCK REWARDS
 				</Text>
 				<FlatList
-					contentContainerStyle={styles.feedCardStyle}
+					contentContainerStyle={styles.feedRewardsCardStyle}
 					horizontal={true}
 					enableEmptySections
 	        data={this.props.homeOffer}
@@ -48,6 +49,20 @@ class FeedScreen extends Component {
 					showsHorizontalScrollIndicator={false}
 					alwaysBounceHorizontal={true}
       	/>
+				<Text style={styles.textStyle}>
+					EARN WITH OFFERS
+				</Text>
+				<FlatList
+					contentContainerStyle={styles.feedOffersCardStyle}
+					enableEmptySections
+					data={this.props.homeOffer}
+					renderItem={({item}) => <FeedOffersCard feedCard={item} onNavigate={this.props.navigation} />}
+					keyExtractor={item => item.company}
+					showsVerticalScrollIndicator={false}
+					alwaysBounceVertical={true}
+				>
+
+				</FlatList>
 			</ScrollView>
 		);
 	}
@@ -58,7 +73,7 @@ const styles = {
 		backgroundColor: '#fff'
 	},
 
-	feedCardStyle: {
+	feedRewardsCardStyle: {
 		flexDirection: 'row',
 		justifyContent: 'center'
 	},
@@ -68,7 +83,12 @@ const styles = {
 		marginLeft: 12,
 		color: '#8F8E94',
 		fontWeight: '600'
-	}
+	},
+
+	feedOffersCardStyle: {
+		flexDirection: 'column',
+		justifyContent: 'center'
+	},
 }
 
 const mapStateToProps = state => {
