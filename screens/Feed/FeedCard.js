@@ -14,56 +14,83 @@ class FeedCard extends Component {
 		const { company } = this.props.feedCard;
 		console.log(company);
 		return (
-			<Card
-				containerStyle={styles.cardStyle}
-				key={this.props.feedCard.company}
-			>
-				<Image
-					style={styles.imageStyle}
-					source={require('../../images/amazon.jpg')}
-					resizeMode="cover"
+			<View style={styles.viewStyle}>
+				<Card
+					containerStyle={styles.cardStyle}
 					key={this.props.feedCard.company}
 				>
-					<View style={styles.overlayStyle}>
-						<View style={styles.viewStyle}>
-							<Text style={styles.textStyle}>
-								{company}
-							</Text>
-
+					<Image
+						style={styles.imageStyle}
+						source={require('../../images/amazon-logo.png')}
+						resizeMode="cover"
+						key={this.props.feedCard.company}
+					>
+						<View>
+							<Card style={styles.progressCardStyle}>
+								<Text style={styles.progressTextStyle}>50% completed</Text>
+							</Card>
 						</View>
-					</View>
-
-				</Image>
-
-			</Card>
+					</Image>
+				</Card>
+				<Text style={styles.pointsTextStyle}>2000 PTS</Text>
+			</View>
 		);
 	}
 }
 
 const styles = {
 	cardStyle: {
-		alignSelf: 'center',
-		width: SCREEN_WIDTH / 3.3,
-		height: SCREEN_HEIGHT / 6,
-		borderRadius: 10,
+		alignItems: 'center',
+		justifyContent: 'center',
+		width: SCREEN_WIDTH / 3.8,
+		height: SCREEN_HEIGHT / 7,
+		borderRadius: 5,
 		marginRight: 2,
 		backgroundColor: '#000',
-		padding: 0
+		padding: 0,
+		shadowColor: '#000',
+		shadowOffset: {
+			width: -0.1,
+			height: 0
+		},
+		shadowRadius: 5,
+		shadowOpacity: 0.3
 	},
 
 	overlayStyle: {
-		alignSelf: 'center',
+		alignItems: 'center',
 		justifyContent: 'center',
-		width: SCREEN_WIDTH / 3.3,
-		height: SCREEN_HEIGHT / 6,
-		borderRadius: 10,
-		backgroundColor: 'rgba(0,0,0,0.35)',
+		width: SCREEN_WIDTH / 3.8,
+		height: SCREEN_HEIGHT / 7,
+		borderRadius: 5,
+		backgroundColor: 'rgba(0,0,0,0.2)',
 		padding: 0,
 		margin: 0
 	},
 
+	progressCardStyle: {
+		alignSelf: 'flex-start',
+		justifyContent: 'center',
+		width: SCREEN_WIDTH / 5,
+		height: SCREEN_HEIGHT / 30,
+		borderRadius: 2,
+		backgroundColor: 'rgba(0,0,0,0.5)',
+		padding: 0,
+		marginTop: 10,
+		marginLeft: 7
+	},
+
+	progressTextStyle: {
+		fontSize: 9,
+		color: '#fff',
+		alignSelf: 'center',
+		margin: 0,
+		padding: 0
+	},
+
 	viewStyle: {
-		margin: 18
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 
 	textStyle: {
@@ -77,20 +104,20 @@ const styles = {
 
 	imageStyle: {
 		alignSelf: 'center',
-		width: SCREEN_WIDTH / 3.3,
-		height: SCREEN_HEIGHT / 6,
-		borderRadius: 10,
+		width: SCREEN_WIDTH / 3.8,
+		height: SCREEN_HEIGHT / 7,
+		borderRadius: 5,
 		padding: 0,
 		margin: 0
 	},
 
-	buttonStyle: {
+	pointsTextStyle: {
 		alignSelf: 'center',
-		width: 50 + '%',
-		borderColor: '#fff',
-		borderWidth: 2,
-		borderRadius: 8,
-		padding: 5
+		marginTop: 5,
+		marginLeft: 8,
+		color: '#8F8E94',
+		fontWeight: '500',
+		fontSize: 10
 	}
 };
 
