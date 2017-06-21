@@ -3,7 +3,7 @@ import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, ScrollView, Dimensions, FlatList } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
-import { homeOffersFetch } from '../../actions'
+import { homeRewardsFetch } from '../../actions'
 import HomeOfferTop from './HomeOfferTop'
 import HomeOfferBtm from './HomeOfferBtm'
 
@@ -20,7 +20,7 @@ class HomeScreen extends Component {
 	}
 
 	componentWillMount () {
-		this.props.homeOffersFetch()
+		this.props.homeRewardsFetch()
 
 	}
 
@@ -96,4 +96,4 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps, {homeOffersFetch}) (HomeScreen);
+export default connect(mapStateToProps, {homeRewardsFetch}) (HomeScreen);

@@ -2,7 +2,7 @@ import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { Button, Icon, List, ListItem, SearchBar } from 'react-native-elements';
-import { homeOffersFetch } from '../../actions';
+import { homeRewardsFetch } from '../../actions';
 
 
 class OffersScreen extends Component {
@@ -14,7 +14,7 @@ class OffersScreen extends Component {
 	}
 
 	componentWillMount () {
-		this.props.homeOffersFetch();
+		this.props.homeRewardsFetch();
 
 	}
 
@@ -83,4 +83,4 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps, {homeOffersFetch}) (OffersScreen);
+export default connect(mapStateToProps, {homeRewardsFetch}) (OffersScreen);

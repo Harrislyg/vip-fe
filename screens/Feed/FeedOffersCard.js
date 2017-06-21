@@ -7,14 +7,19 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class FeedOffersCard extends Component {
 	onNavigate () {
-		console.log('Harris');
 		this.props.onNavigate.navigate('feedDetail');
 	}
 
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company } = this.props.feedCard;
-		console.log(company);
+		const { company, feedOfferLogo, feedOfferBg } = this.props.feedCard;
+		const feedOfferLogoImages = {
+			hnmBg: require('../../images/hnm-bg.jpg'),
+			hnm: require('../../images/hnm-logo.png'),
+			watsonsBg: require('../../images/watsons-bg.jpg'),
+			watsons: require('../../images/watsons-logo.png')
+		};
+		console.log(this.props.feedCard);
 		return (
 			<Card
 				containerStyle={styles.cardStyle}
@@ -26,14 +31,13 @@ class FeedOffersCard extends Component {
 				>
 					<Image
 						style={styles.imageStyle}
-						source={require('../../images/amazon.jpg')}
+						source={feedOfferLogoImages[feedOfferBg]}
 						resizeMode="cover"
 						key={this.props.feedCard.company}
-					>
-					</Image>
+					/>
 					<Image
 						style={styles.logoStyle}
-						source={require('../../images/amazon-logo.png')}
+						source={feedOfferLogoImages[feedOfferLogo]}
 						resizeMode="cover"
 					/>
 					<Text style={styles.textStyle}>

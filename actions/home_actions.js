@@ -1,12 +1,19 @@
 import {
-	HOME_OFFERS_FETCH_SUCCESS
+	HOME_REWARDS_FETCH_SUCCESS,
+	FEED_OFFERS_FETCH_SUCCESS
 } from './types';
 
-import { homeOffersData } from '../data/FeatureOffers';
+import { homeRewardsData } from '../data/FeatureRewards';
+import { feedOffersData } from '../data/FeedOffers';
 
-export const homeOffersFetch = () => {
+export const homeRewardsFetch = () => {
 	return (dispatch) => {
-		dispatch({ type: HOME_OFFERS_FETCH_SUCCESS, payload: homeOffersData });
+		dispatch({ type: HOME_REWARDS_FETCH_SUCCESS, payload: homeRewardsData });
 	};
+};
 
+export const feedOffersFetch = () => {
+	return (dispatch) => {
+		dispatch({ type: FEED_OFFERS_FETCH_SUCCESS, payload: feedOffersData });
+	};
 };

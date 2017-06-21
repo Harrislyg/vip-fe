@@ -6,7 +6,8 @@ import { Button, Icon } from 'react-native-elements';
 import FeedCard from './FeedCard'
 import FeedOffersCard from './FeedOffersCard'
 import FeedTopHeader from './FeedTopHeader'
-import { homeOffersFetch } from '../../actions'
+import { homeRewardsFetch } from '../../actions'
+import { feedOffersFetch } from '../../actions'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -24,24 +25,20 @@ class FeedScreen extends Component {
 	}
 
 	state = {
-    fontLoaded: false,
-  };
+    fontLoaded: false
+	};
+
 	async componentDidMount() {
     await Font.loadAsync({
       'ABeeZee': require('../../assets/fonts/ABeeZee-Regular.ttf'),
     });
 
+		this.props.homeRewardsFetch();
+		this.props.feedOffersFetch();
+
     this.setState({ fontLoaded: true });
+
   }
-
-	componentWillMount () {
-		Font.loadAsync({
-			'ABeeZee': require('../../assets/fonts/ABeeZee-Regular.ttf')
-		});
-
-		this.props.homeOffersFetch()
-
-	}
 
 	renderTopRow (homeOffer) {
     return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
@@ -64,7 +61,7 @@ class FeedScreen extends Component {
 						contentContainerStyle={styles.feedRewardsCardStyle}
 						horizontal={true}
 						enableEmptySections
-		        data={this.props.homeOffer}
+		        data={this.props.feedRewards}
 		        renderItem={({item}) => <FeedCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsHorizontalScrollIndicator={false}
@@ -76,7 +73,7 @@ class FeedScreen extends Component {
 					<FlatList
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
-						data={this.props.homeOffer}
+						data={this.props.feedOffers}
 						renderItem={({item}) => <FeedOffersCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsVerticalScrollIndicator={false}
@@ -119,10 +116,10 @@ const styles = {
 	},
 }
 
-const mapStateToProps = state => {
-  const homeOffer = state.home
-  return { homeOffer }
+const mapStateToProps = ({feed}) => {
+  const {feedRewards, feedOffers} = feed
+  return {feedRewards, feedOffers}
 
 }
 
-export default connect(mapStateToProps, {homeOffersFetch}) (FeedScreen);
+export default connect(mapStateToProps, {homeRewardsFetch, feedOffersFetch}) (FeedScreen);

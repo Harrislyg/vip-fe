@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Dimensions, Image, View } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -11,8 +11,21 @@ class FeedCard extends Component {
 	// }
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company } = this.props.feedCard;
-		console.log(company);
+		const { company, points, feedRewardLogo } = this.props.feedCard;
+		const feedRewardLogoImages = {
+			foodpanda: require('../../images/foodpanda-logo.png'),
+			gv: require('../../images/gv-logo.jpg'),
+			forever: require('../../images/forever21-logo.jpg'),
+			starbucks: require('../../images/starbucks-logo.png'),
+			beats: require('../../images/beats-logo.png'),
+			nike: require('../../images/nike-logo.jpg'),
+			gap: require('../../images/gap-logo.png'),
+			nikon: require('../../images/nikon-logo.png'),
+			apple: require('../../images/apple-logo.jpg'),
+			groupon: require('../../images/groupon-logo.png'),
+			sephora: require('../../images/sephora-logo.jpg'),
+			zara: require('../../images/zara-logo.jpg')
+		};
 		return (
 			<View style={styles.viewStyle}>
 				<Card
@@ -21,18 +34,18 @@ class FeedCard extends Component {
 				>
 					<Image
 						style={styles.imageStyle}
-						source={require('../../images/amazon-logo.png')}
+						source={feedRewardLogoImages[feedRewardLogo]}
 						resizeMode="cover"
 						key={this.props.feedCard.company}
 					>
-						<View>
+						{/* <View>
 							<Card style={styles.progressCardStyle}>
 								<Text style={styles.progressTextStyle}>50% completed</Text>
 							</Card>
-						</View>
+						</View> */}
 					</Image>
 				</Card>
-				<Text style={styles.pointsTextStyle}>2000 PTS</Text>
+				<Text style={styles.pointsTextStyle}>{points} PTS</Text>
 			</View>
 		);
 	}

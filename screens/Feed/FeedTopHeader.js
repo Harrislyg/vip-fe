@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Dimensions, Image, View } from 'react-native';
-import { Button } from 'react-native-elements';
-import { Font } from 'expo';
+import { Text, Dimensions, View } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
