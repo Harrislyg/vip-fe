@@ -1,4 +1,4 @@
-export const homeRewardsData = [
+export const feedRewardsData = [
 	{ company: 'Apple', points: '15000', feedRewardLogo: 'apple' },
 	{ company: 'GV', points: '15000', feedRewardLogo: 'gv' },
 	{ company: 'Forever 21', points: '10000', feedRewardLogo: 'forever' },

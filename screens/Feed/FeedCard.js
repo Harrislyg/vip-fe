@@ -30,13 +30,13 @@ class FeedCard extends Component {
 			<View style={styles.viewStyle}>
 				<Card
 					containerStyle={styles.cardStyle}
-					key={this.props.feedCard.company}
+					key={company}
 				>
 					<Image
 						style={styles.imageStyle}
 						source={feedRewardLogoImages[feedRewardLogo]}
 						resizeMode="cover"
-						key={this.props.feedCard.company}
+						key={company}
 					>
 						{/* <View>
 							<Card style={styles.progressCardStyle}>

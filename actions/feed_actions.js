@@ -1,14 +1,14 @@
 import {
-	HOME_REWARDS_FETCH_SUCCESS,
+	FEED_REWARDS_FETCH_SUCCESS,
 	FEED_OFFERS_FETCH_SUCCESS
 } from './types';
 
-import { homeRewardsData } from '../data/FeatureRewards';
+import { feedRewardsData } from '../data/FeedRewards';
 import { feedOffersData } from '../data/FeedOffers';
 
-export const homeRewardsFetch = () => {
+export const feedRewardsFetch = () => {
 	return (dispatch) => {
-		dispatch({ type: HOME_REWARDS_FETCH_SUCCESS, payload: homeRewardsData });
+		dispatch({ type: FEED_REWARDS_FETCH_SUCCESS, payload: feedRewardsData });
 	};
 };
 

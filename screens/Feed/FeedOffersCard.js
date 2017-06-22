@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, Dimensions, Image, View, TouchableOpacity } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Text, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { Card } from 'react-native-elements';
+import SmallCircleLogo from '../../components/common/SmallCircleLogo';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -23,7 +24,7 @@ class FeedOffersCard extends Component {
 		return (
 			<Card
 				containerStyle={styles.cardStyle}
-				key={this.props.feedCard.company}
+				key={company}
 			>
 				<TouchableOpacity
 					onPress={this.onNavigate.bind(this)}
@@ -33,13 +34,9 @@ class FeedOffersCard extends Component {
 						style={styles.imageStyle}
 						source={feedOfferLogoImages[feedOfferBg]}
 						resizeMode="cover"
-						key={this.props.feedCard.company}
+						key={company}
 					/>
-					<Image
-						style={styles.logoStyle}
-						source={feedOfferLogoImages[feedOfferLogo]}
-						resizeMode="cover"
-					/>
+					<SmallCircleLogo image={feedOfferLogo} />
 					<Text style={styles.textStyle}>
 						50 points per $1 spent
 					</Text>
@@ -57,10 +54,18 @@ const styles = {
 	cardStyle: {
 		alignSelf: 'center',
 		width: SCREEN_WIDTH / 1.1,
-		height: SCREEN_HEIGHT / 5,
+		height: SCREEN_HEIGHT / 4,
 		borderRadius: 3,
 		backgroundColor: '#fff',
-		padding: 0
+		marginBottom: 15,
+		padding: 0,
+		shadowColor: '#000',
+		shadowOffset: {
+			width: -0.2,
+			height: 0
+		},
+		shadowRadius: 5,
+		shadowOpacity: 0.3
 	},
 
 	// overlayStyle: {
@@ -74,17 +79,6 @@ const styles = {
 	// 	margin: 0
 	// },
 
-	logoStyle: {
-		alignSelf: 'center',
-		height: 50,
-		width: 50,
-		borderColor: '#fff',
-		borderWidth: 1,
-		borderRadius: 25,
-		marginTop: -25
-
-	},
-
 	textStyle: {
 		alignSelf: 'center',
 		color: '#8F8E94',
@@ -96,7 +90,7 @@ const styles = {
 	imageStyle: {
 		alignSelf: 'center',
 		width: SCREEN_WIDTH / 1.1,
-		height: SCREEN_HEIGHT / 10,
+		height: SCREEN_HEIGHT / 7,
 		borderRadius: 2,
 		padding: 0,
 		margin: 0

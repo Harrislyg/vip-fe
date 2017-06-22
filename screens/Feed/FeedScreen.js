@@ -6,7 +6,7 @@ import { Button, Icon } from 'react-native-elements';
 import FeedCard from './FeedCard'
 import FeedOffersCard from './FeedOffersCard'
 import FeedTopHeader from './FeedTopHeader'
-import { homeRewardsFetch } from '../../actions'
+import { feedRewardsFetch } from '../../actions'
 import { feedOffersFetch } from '../../actions'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -33,17 +33,17 @@ class FeedScreen extends Component {
       'ABeeZee': require('../../assets/fonts/ABeeZee-Regular.ttf'),
     });
 
-		this.props.homeRewardsFetch();
+		this.props.feedRewardsFetch();
 		this.props.feedOffersFetch();
 
     this.setState({ fontLoaded: true });
 
   }
 
-	renderTopRow (homeOffer) {
-    return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
-
-  }
+	// renderTopRow (homeOffer) {
+  //   return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
+	//
+  // }
 
 	render () {
 		return (
@@ -122,4 +122,4 @@ const mapStateToProps = ({feed}) => {
 
 }
 
-export default connect(mapStateToProps, {homeRewardsFetch, feedOffersFetch}) (FeedScreen);
+export default connect(mapStateToProps, {feedRewardsFetch, feedOffersFetch}) (FeedScreen);
