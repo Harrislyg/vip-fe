@@ -2,7 +2,7 @@ import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, FlatList, ActivityIndicator } from 'react-native';
 import { Button, Icon, List, ListItem, SearchBar } from 'react-native-elements';
-import { feedRewardsFetch } from '../../actions';
+import { feedOffersFetch } from '../../actions';
 
 
 class OffersScreen extends Component {
@@ -14,7 +14,7 @@ class OffersScreen extends Component {
 	}
 
 	componentWillMount () {
-		this.props.feedRewardsFetch();
+		this.props.feedOffersFetch();
 
 	}
 
@@ -31,43 +31,37 @@ class OffersScreen extends Component {
     );
   };
 
-	renderHeader = () => {
-    return <SearchBar placeholder="Type Here..." round />;
-  };
-
-	renderFooter = () => {
-    return (
-      <View
-        style={{
-          paddingVertical: 20,
-          borderTopWidth: 1,
-          borderColor: "#CED0CE"
-        }}
-      >
-        <ActivityIndicator animating size="large" />
-      </View>
-    );
-  };
-
 	render () {
+		const feedOfferLogoImages = {
+			hnm: require('../../images/hnm-logo.png'),
+			watsons: require('../../images/watsons-logo.png'),
+			uniqlo: require('../../images/uniqlo-logo.png'),
+			grab: require('../../images/grab-logo.png'),
+			starbucks: require('../../images/starbucks-logo.png'),
+			expedia: require('../../images/expedia-logo.png'),
+			groupon: require('../../images/groupon-logo.png'),
+			glints: require('../../images/glints-logo.png'),
+			ez: require('../../images/ez-logo.png')
+
+
+		};
+
 		return (
 			<List
 				containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}
 			>
 				<FlatList
-					data={this.props.OffersOffer}
+					data={this.props.feedOffers}
 					renderItem={({ item }) => (
 						<ListItem
 							roundAvatar
 							title={`${item.company}`}
 							subtitle={item.company}
 							containerStyle={{ borderBottomWidth: 0 }}
-							avatar={'dog'}
+							avatar={feedOfferLogoImages[item.feedOfferLogo]}
 						/>
 					)}
 					ItemSeparatorComponent={this.renderSeparator}
-					ListHeaderComponent={this.renderHeader}
-					ListFooterComponent={this.renderFooter}
 					keyExtractor={item => item.company}
 				/>
 			</List>
@@ -77,10 +71,10 @@ class OffersScreen extends Component {
 
 }
 
-const mapStateToProps = state => {
-  const OffersOffer = state.home
-  return { OffersOffer }
+const mapStateToProps = ({feed}) => {
+  const {feedOffers} = feed
+  return {feedOffers}
 
 }
 
-export default connect(mapStateToProps, {feedRewardsFetch}) (OffersScreen);
+export default connect(mapStateToProps, {feedOffersFetch}) (OffersScreen);

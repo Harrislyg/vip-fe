@@ -16,9 +16,15 @@ class FeedOffersCard extends Component {
 		const { company, feedOfferLogo, feedOfferBg } = this.props.feedCard;
 		const feedOfferLogoImages = {
 			hnmBg: require('../../images/hnm-bg.jpg'),
-			hnm: require('../../images/hnm-logo.png'),
 			watsonsBg: require('../../images/watsons-bg.jpg'),
-			watsons: require('../../images/watsons-logo.png')
+			uniqloBg: require('../../images/uniqlo-bg.jpg'),
+			grabBg: require('../../images/grab-bg.png'),
+			starbucksBg: require('../../images/starbucks-bg.jpg'),
+			expediaBg: require('../../images/expedia-bg.jpg'),
+			grouponBg: require('../../images/groupon-bg.png'),
+			glintsBg: require('../../images/glints-bg.png'),
+			ezBg: require('../../images/ez-bg.jpg')
+
 		};
 		console.log(this.props.feedCard);
 		return (

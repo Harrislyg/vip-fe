@@ -5,7 +5,15 @@ class SmallCircleLogo extends Component {
 	render () {
 		const feedOfferLogoImages = {
 			hnm: require('../../images/hnm-logo.png'),
-			watsons: require('../../images/watsons-logo.png')
+			watsons: require('../../images/watsons-logo.png'),
+			uniqlo: require('../../images/uniqlo-logo.png'),
+			grab: require('../../images/grab-logo.png'),
+			starbucks: require('../../images/starbucks-logo.png'),
+			expedia: require('../../images/expedia-logo.png'),
+			groupon: require('../../images/groupon-logo.png'),
+			glints: require('../../images/glints-logo.png'),
+			ez: require('../../images/ez-logo.png')
+
 		};
 		return (
 			<Image
@@ -25,7 +33,8 @@ const styles = {
 		borderColor: '#fff',
 		borderWidth: 1,
 		borderRadius: 25,
-		marginTop: -25
+		marginTop: -25,
+		backgroundColor: '#fff'
 	}
 };
 
