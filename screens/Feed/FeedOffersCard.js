@@ -23,7 +23,10 @@ class FeedOffersCard extends Component {
 			expediaBg: require('../../images/expedia-bg.jpg'),
 			grouponBg: require('../../images/groupon-bg.png'),
 			glintsBg: require('../../images/glints-bg.png'),
-			ezBg: require('../../images/ez-bg.jpg')
+			ezBg: require('../../images/ez-bg.jpg'),
+			zaloraBg: require('../../images/zalora-bg.jpg'),
+			deliverooBg: require('../../images/deliveroo-bg.jpg'),
+			redmartBg: require('../../images/redmart-bg.png')
 
 		};
 		console.log(this.props.feedCard);

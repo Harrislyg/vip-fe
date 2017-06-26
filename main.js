@@ -28,7 +28,14 @@ class App extends React.Component {
 					mode: 'modal'
 				})
 			},
-			offers: { screen: OffersScreen },
+			offers: {
+				screen: StackNavigator({
+					offers: { screen: OffersScreen }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			},
 			rewards: { screen: RewardsScreen },
 			home: {
 				screen: StackNavigator({

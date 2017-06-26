@@ -12,7 +12,10 @@ class SmallCircleLogo extends Component {
 			expedia: require('../../images/expedia-logo.png'),
 			groupon: require('../../images/groupon-logo.png'),
 			glints: require('../../images/glints-logo.png'),
-			ez: require('../../images/ez-logo.png')
+			ez: require('../../images/ez-logo.png'),
+			zalora: require('../../images/zalora-logo.png'),
+			deliveroo: require('../../images/deliveroo-logo.png'),
+			redmart: require('../../images/redmart-logo.png')
 
 		};
 		return (

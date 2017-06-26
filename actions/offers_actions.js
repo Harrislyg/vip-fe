@@ -1,12 +1,18 @@
 import {
-	TEST_REDUCER
+	OFFERS_PERPETUAL_FETCH_SUCCESS,
+	OFFERS_ONETIME_FETCH_SUCCESS
 } from './types';
 
-// How to use AsyncStorage:
-// AsyncStorage.setItem('fb_token', token)
-// AsyncStorage.getItem('fb_token')
+import { offersPerpetualData, offersOnetimeData } from '../data/OffersOffers';
 
-export const facebookLogin = () => async dispatch => {
-	dispatch({ type: TEST_REDUCER, payload: 'Hello' })
+export const offersPerpetualFetch = () => {
+	return (dispatch) => {
+		dispatch({ type: OFFERS_PERPETUAL_FETCH_SUCCESS, payload: offersPerpetualData });
+	};
+};
 
-}
+export const offersOnetimeFetch = () => {
+	return (dispatch) => {
+		dispatch({ type: OFFERS_ONETIME_FETCH_SUCCESS, payload: offersOnetimeData });
+	};
+};
