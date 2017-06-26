@@ -58,7 +58,12 @@ class OffersScreen extends Component {
 
 		return (
 			<ScrollView style={styles.scrollView}>
-				<OffersActivated></OffersActivated>
+				<View style={styles.offersActivatedStyle}>
+					<Text style={styles.textStyle}>
+						ACTIVATED OFFERS
+					</Text>
+					<OffersActivated></OffersActivated>
+				</View>
 				<View style={styles.offersOnetimeStyle}>
 					<Text style={styles.textStyle}>
 						ONE-TIME OFFERS
@@ -102,6 +107,10 @@ const styles = {
 		marginLeft: 12,
 		color: '#8F8E94',
 		fontWeight: '600'
+	},
+
+	offersActivatedStyle: {
+		marginBottom: 15
 	},
 
 	offersOnetimeStyle: {

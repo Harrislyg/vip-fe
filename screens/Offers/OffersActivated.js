@@ -31,7 +31,7 @@ const styles = {
 	feedOffersCardStyle: {
 		flexDirection: 'row',
 		justifyContent: 'center',
-		marginBottom: 30
+		marginBottom: 20
 	}
 };
 
