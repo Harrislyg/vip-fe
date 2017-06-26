@@ -15,3 +15,12 @@ export const offersOnetimeData = [
 	{ company: 'Expedia', points: '15', feedOfferLogo: 'expedia', feedOfferBg: 'expediaBg' },
 	{ company: 'Deliveroo', points: '15', feedOfferLogo: 'deliveroo', feedOfferBg: 'deliverooBg' }
 ];
+
+export const offersActivatedData = [
+	{ company: 'Uniqlo', points: '15', feedOfferLogo: 'uniqlo' },
+	{ company: 'Adidas', points: '15', feedOfferLogo: 'adidas' },
+	{ company: 'Din Tai Fung', points: '15', feedOfferLogo: 'dintaifung' },
+	{ company: 'Uber', points: '15', feedOfferLogo: 'uber' },
+	{ company: 'Ikea', points: '15', feedOfferLogo: 'ikea' }
+
+];

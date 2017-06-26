@@ -1,11 +1,10 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, FlatList, ActivityIndicator, ScrollView, Image, Dimensions } from 'react-native';
-import { Card, Icon, List, ListItem, SearchBar } from 'react-native-elements';
+import { FlatList, Dimensions } from 'react-native';
+import { Card, ListItem } from 'react-native-elements';
 import { offersOnetimeFetch } from '../../actions';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class OffersOnetime extends Component {
 
@@ -53,7 +52,7 @@ const styles = {
 		width: SCREEN_WIDTH / 1.1,
 		borderRadius: 3,
 		backgroundColor: '#fff',
-		marginBottom: 10,
+		marginBottom: 5,
 		padding: 0,
 		shadowColor: '#8F8E94',
 		shadowOffset: {
@@ -66,14 +65,14 @@ const styles = {
 
 	listItemStyle: {
 		borderBottomWidth: 0,
-		margin: 10
+		margin: 7
 
 	},
 
 	avatarStyle: {
-		width: 50,
-		height: 50,
-		borderRadius: 25
+		width: 42,
+		height: 42,
+		borderRadius: 21
 	}
 };
 

@@ -4,7 +4,7 @@ import { View, Text, FlatList, ActivityIndicator, ScrollView, Image, Dimensions 
 import { Button, Icon, List, ListItem, SearchBar } from 'react-native-elements';
 import { offersPerpetualFetch } from '../../actions';
 import OffersOnetime from './OffersOnetime';
-
+import OffersActivated from './OffersActivated';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -58,6 +58,7 @@ class OffersScreen extends Component {
 
 		return (
 			<ScrollView style={styles.scrollView}>
+				<OffersActivated></OffersActivated>
 				<View style={styles.offersOnetimeStyle}>
 					<Text style={styles.textStyle}>
 						ONE-TIME OFFERS
