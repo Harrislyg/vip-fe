@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
-import { FlatList, Dimensions } from 'react-native';
+import { FlatList, Dimensions, Text, Image } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
 import { offersOnetimeFetch } from '../../actions';
 
@@ -12,13 +12,23 @@ class OffersOnetime extends Component {
 		this.props.offersOnetimeFetch();
 	}
 
+	renderIcon (item, feedOfferLogoImages) {
+		if (item.pointsTwo === '$1') {
+			return <Text><Image style={styles.iconStyle} source={feedOfferLogoImages['bolt']} /><Text style={styles.boldStyle}> {item.pointsOne}</Text><Text> per </Text><Text style={styles.boldStyle}>{item.pointsTwo}</Text><Text> spent</Text></Text>;
+		}
+		return <Text><Image style={styles.iconStyle} source={feedOfferLogoImages['piggy']} /><Text style={styles.boldStyle}> {item.pointsOne}</Text><Text> {item.pointsTwo}</Text></Text>;
+	}
+
 	render () {
 		const feedOfferLogoImages = {
 			uniqlo: require('../../images/uniqlo-logo.png'),
 			expedia: require('../../images/expedia-logo.png'),
 			glints: require('../../images/glints-logo.png'),
+			citi: require('../../images/citi-logo.png'),
 			ez: require('../../images/ez-logo.png'),
-			deliveroo: require('../../images/deliveroo-logo.png')
+			deliveroo: require('../../images/deliveroo-logo.png'),
+			bolt: require('../../images/bolt-icon.png'),
+			piggy: require('../../images/piggy-icon.png')
 
 		};
 
@@ -32,7 +42,7 @@ class OffersOnetime extends Component {
 						<ListItem
 							roundAvatar
 							title={`${item.company}`}
-							subtitle={item.company}
+							subtitle={<Text style={styles.subtitleStyle}>{this.renderIcon(item, feedOfferLogoImages)}</Text>}
 							containerStyle={styles.listItemStyle}
 							avatar={feedOfferLogoImages[item.feedOfferLogo]}
 							avatarStyle={styles.avatarStyle}
@@ -67,6 +77,22 @@ const styles = {
 		borderBottomWidth: 0,
 		margin: 7
 
+	},
+
+	boldStyle: {
+		color: '#757575',
+		fontWeight: '500'
+	},
+
+	subtitleStyle: {
+		color: '#8F8E94',
+		marginLeft: 11,
+		marginTop: 2
+	},
+
+	iconStyle: {
+		width: 10,
+		height: 10
 	},
 
 	avatarStyle: {

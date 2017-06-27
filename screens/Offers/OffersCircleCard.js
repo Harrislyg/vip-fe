@@ -44,7 +44,7 @@ const styles = {
 		justifyContent: 'center',
 		width: SCREEN_WIDTH / 3.8,
 		height: SCREEN_HEIGHT / 7,
-		borderRadius: SCREEN_WIDTH / 7.6,
+		borderRadius: SCREEN_WIDTH / 7.7,
 		marginRight: 2,
 		backgroundColor: '#fff',
 		padding: 0,
@@ -75,7 +75,7 @@ const styles = {
 		alignSelf: 'center',
 		width: SCREEN_WIDTH / 3.8,
 		height: SCREEN_HEIGHT / 7,
-		borderRadius: SCREEN_WIDTH / 7.6,
+		borderRadius: SCREEN_WIDTH / 7.7,
 		padding: 0,
 		margin: 0
 	}

@@ -13,7 +13,7 @@ class FeedOffersCard extends Component {
 
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company, feedOfferLogo, feedOfferBg } = this.props.feedCard;
+		const { company, feedOfferLogo, feedOfferBg, points } = this.props.feedCard;
 		const feedOfferLogoImages = {
 			hnmBg: require('../../images/hnm-bg.jpg'),
 			watsonsBg: require('../../images/watsons-bg.jpg'),
@@ -29,7 +29,6 @@ class FeedOffersCard extends Component {
 			redmartBg: require('../../images/redmart-bg.png')
 
 		};
-		console.log(this.props.feedCard);
 		return (
 			<Card
 				containerStyle={styles.cardStyle}
@@ -47,7 +46,7 @@ class FeedOffersCard extends Component {
 					/>
 					<SmallCircleLogo image={feedOfferLogo} />
 					<Text style={styles.textStyle}>
-						50 points per $1 spent
+						{points}
 					</Text>
 				</TouchableOpacity>
 			</Card>

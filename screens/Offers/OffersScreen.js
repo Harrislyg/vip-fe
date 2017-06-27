@@ -43,16 +43,12 @@ class OffersScreen extends Component {
 		const feedOfferLogoImages = {
 			hnm: require('../../images/hnm-logo.png'),
 			watsons: require('../../images/watsons-logo.png'),
-			uniqlo: require('../../images/uniqlo-logo.png'),
 			grab: require('../../images/grab-logo.png'),
 			starbucks: require('../../images/starbucks-logo.png'),
-			expedia: require('../../images/expedia-logo.png'),
 			groupon: require('../../images/groupon-logo.png'),
-			glints: require('../../images/glints-logo.png'),
-			ez: require('../../images/ez-logo.png'),
 			zalora: require('../../images/zalora-logo.png'),
-			deliveroo: require('../../images/deliveroo-logo.png'),
-			redmart: require('../../images/redmart-logo.png')
+			redmart: require('../../images/redmart-logo.png'),
+			tick: require('../../images/tick-icon.png')
 
 		};
 
@@ -79,7 +75,10 @@ class OffersScreen extends Component {
 						<ListItem
 							roundAvatar
 							title={`${item.company}`}
-							subtitle={item.company}
+							subtitle={<Text style={styles.subtitleStyle}>
+								<Image
+								style={styles.iconStyle}
+								source={feedOfferLogoImages['tick']}/><Text style={styles.boldStyle}> {item.points}</Text><Text> per </Text><Text style={styles.boldStyle}>{item.unit}</Text><Text> spent</Text></Text>}
 							containerStyle={styles.offersPerpetualItemStyle}
 							avatar={feedOfferLogoImages[item.feedOfferLogo]}
 							avatarStyle={styles.perpetualAvatarStyle}
@@ -107,6 +106,22 @@ const styles = {
 		marginLeft: 12,
 		color: '#8F8E94',
 		fontWeight: '600'
+	},
+
+	boldStyle: {
+		color: '#757575',
+		fontWeight: '500'
+	},
+
+	subtitleStyle: {
+		color: '#8F8E94',
+		marginLeft: 11,
+		marginTop: 2
+	},
+
+	iconStyle: {
+		width: 10,
+		height: 10
 	},
 
 	offersActivatedStyle: {
