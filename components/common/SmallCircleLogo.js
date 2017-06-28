@@ -15,6 +15,7 @@ class SmallCircleLogo extends Component {
 			ez: require('../../images/ez-logo.png'),
 			zalora: require('../../images/zalora-logo.png'),
 			deliveroo: require('../../images/deliveroo-logo.png'),
+			underarmour: require('../../images/underarmour-logo.png'),
 			redmart: require('../../images/redmart-logo.png')
 
 		};

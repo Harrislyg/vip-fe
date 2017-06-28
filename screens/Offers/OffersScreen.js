@@ -13,7 +13,7 @@ class OffersScreen extends Component {
 		title: null,
 		headerLeft: (<Image source={require('../../images/max-logo.png')} style={{width: 30, height: 30, marginLeft: SCREEN_WIDTH / 2 - 15, marginTop: 10, marginBottom: 10}} />),
 		tabBarIcon: ({ tintColor }) => {
-			return <Icon name="monetization-on" size={29} color={tintColor} />
+			return <Icon name="local-mall" size={29} color={tintColor} />
 		},
 		headerStyle: {
 			backgroundColor: '#fff'
@@ -46,7 +46,7 @@ class OffersScreen extends Component {
 			grab: require('../../images/grab-logo.png'),
 			starbucks: require('../../images/starbucks-logo.png'),
 			groupon: require('../../images/groupon-logo.png'),
-			zalora: require('../../images/zalora-logo.png'),
+			foodpanda: require('../../images/foodpanda-logo.png'),
 			redmart: require('../../images/redmart-logo.png'),
 			tick: require('../../images/tick-icon.png')
 
@@ -125,7 +125,7 @@ const styles = {
 	},
 
 	offersActivatedStyle: {
-		marginBottom: 15
+		marginBottom: 10
 	},
 
 	offersOnetimeStyle: {

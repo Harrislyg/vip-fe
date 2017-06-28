@@ -19,7 +19,7 @@ class App extends React.Component {
 			// auth: { screen: AuthScreen },
 			// main: {
 			// 	screen: TabNavigator({
-			feed: {
+			Feed: {
 				screen: StackNavigator({
 					feed: { screen: FeedScreen },
 					feedDetail: { screen: FeedCardDetail }
@@ -28,7 +28,7 @@ class App extends React.Component {
 					mode: 'modal'
 				})
 			},
-			offers: {
+			Offers: {
 				screen: StackNavigator({
 					offers: { screen: OffersScreen }
 				}, {
@@ -36,21 +36,22 @@ class App extends React.Component {
 					mode: 'modal'
 				})
 			},
-			rewards: { screen: RewardsScreen },
-			home: {
-				screen: StackNavigator({
-					home: { screen: HomeScreen },
-					homeoffer: { screen: HomeOffer }
-				}, {
-					headerMode: 'float',
-					mode: 'modal'
-				})
-			}
+			Rewards: { screen: RewardsScreen }
+			// Home: {
+			// 	screen: StackNavigator({
+			// 		home: { screen: HomeScreen },
+			// 		homeoffer: { screen: HomeOffer }
+			// 	}, {
+			// 		headerMode: 'float',
+			// 		mode: 'modal'
+			// 	})
+			// }
 		}, {
 			// tabBarPosition is an Android configuration
 			tabBarPosition: 'bottom',
 			tabBarOptions: {
-				labelStyle: { fontSize: 10, marginTop: -5 }
+				labelStyle: { fontSize: 10, marginTop: -5 },
+				activeTintColor: '#6AD6C8'
 			},
 			lazy: true
 		});

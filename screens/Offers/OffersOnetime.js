@@ -26,7 +26,7 @@ class OffersOnetime extends Component {
 			glints: require('../../images/glints-logo.png'),
 			citi: require('../../images/citi-logo.png'),
 			ez: require('../../images/ez-logo.png'),
-			deliveroo: require('../../images/deliveroo-logo.png'),
+			underarmour: require('../../images/underarmour-logo.png'),
 			bolt: require('../../images/bolt-icon.png'),
 			piggy: require('../../images/piggy-icon.png')
 
@@ -85,6 +85,7 @@ const styles = {
 	},
 
 	subtitleStyle: {
+		fontSize: 11,
 		color: '#8F8E94',
 		marginLeft: 11,
 		marginTop: 2

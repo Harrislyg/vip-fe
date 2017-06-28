@@ -16,7 +16,7 @@ class OffersCircleCard extends Component {
 			uniqlo: require('../../images/uniqlo-activated-logo.png'),
 			adidas: require('../../images/adidas-logo.jpg'),
 			dintaifung: require('../../images/dintaifung-logo.png'),
-			uber: require('../../images/uber-logo.png'),
+			uber: require('../../images/uber-logo.jpg'),
 			ikea: require('../../images/ikea-logo.png')
 
 		};
@@ -43,8 +43,8 @@ const styles = {
 		alignItems: 'center',
 		justifyContent: 'center',
 		width: SCREEN_WIDTH / 3.8,
-		height: SCREEN_HEIGHT / 7,
-		borderRadius: SCREEN_WIDTH / 7.7,
+		height: SCREEN_WIDTH / 3.8,
+		borderRadius: SCREEN_WIDTH / 7.6,
 		marginRight: 2,
 		backgroundColor: '#fff',
 		padding: 0,
@@ -74,8 +74,8 @@ const styles = {
 	imageStyle: {
 		alignSelf: 'center',
 		width: SCREEN_WIDTH / 3.8,
-		height: SCREEN_HEIGHT / 7,
-		borderRadius: SCREEN_WIDTH / 7.7,
+		height: SCREEN_WIDTH / 3.8,
+		borderRadius: SCREEN_WIDTH / 7.6,
 		padding: 0,
 		margin: 0
 	}

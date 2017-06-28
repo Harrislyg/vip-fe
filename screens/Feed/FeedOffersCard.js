@@ -26,6 +26,7 @@ class FeedOffersCard extends Component {
 			ezBg: require('../../images/ez-bg.jpg'),
 			zaloraBg: require('../../images/zalora-bg.jpg'),
 			deliverooBg: require('../../images/deliveroo-bg.jpg'),
+			underarmourBg: require('../../images/underarmour-bg.jpg'),
 			redmartBg: require('../../images/redmart-bg.png')
 
 		};

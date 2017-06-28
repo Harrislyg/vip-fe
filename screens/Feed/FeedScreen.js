@@ -16,7 +16,7 @@ class FeedScreen extends Component {
 		title: null,
 		headerLeft: (<Image source={require('../../images/max-logo.png')} style={{width: 30, height: 30, marginLeft: SCREEN_WIDTH / 2 - 15, marginTop: 10, marginBottom: 10}} />),
 		tabBarIcon: ({ tintColor }) => {
-			return <Icon name="casino" size={29} color={tintColor} />
+			return <Icon name="favorite" size={29} color={tintColor} />
 		},
 		headerStyle: {
 			backgroundColor: '#fff'

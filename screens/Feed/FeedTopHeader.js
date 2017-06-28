@@ -8,7 +8,7 @@ class FeedTopHeader extends Component {
 	render () {
 		return (
 			<View style={styles.viewStyle}>
-				<Text style={styles.pointStyle}>532</Text>
+				<Text style={styles.pointStyle}>7535</Text>
 				<View style={styles.unitViewStyle}>
 					<Text style={styles.unitStyle}>PTS</Text>
 				</View>
@@ -28,7 +28,7 @@ const styles = {
 	pointStyle: {
 		color: '#31EAD7',
 		fontFamily: 'ABeeZee',
-		fontSize: 35,
+		fontSize: 40,
 		fontWeight: 'bold'
 	},
 
