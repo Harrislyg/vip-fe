@@ -1,7 +1,8 @@
 import React, {Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
-
+import Detail from "../../components/common/Detail";
+import DetailHeader from "../../components/common/DetailHeader";
 
 class RewardsScreen extends Component {
 	static navigationOptions = {
@@ -13,13 +14,9 @@ class RewardsScreen extends Component {
 
 	render () {
 		return (
-			<View>
-				<Text>RewardsScreen</Text>
-				<Text>RewardsScreen</Text>
-				<Text>RewardsScreen</Text>
-				<Text>RewardsScreen</Text>
-				<Text>RewardsScreen</Text>
-			</View>
+			<ScrollView>
+				<Detail action/>
+			</ScrollView>
 		);
 	}
 }
