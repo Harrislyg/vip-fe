@@ -10,6 +10,7 @@ import { feedRewardsFetch } from '../../actions'
 import { feedOffersFetch } from '../../actions'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class FeedScreen extends Component {
 	static navigationOptions = {
@@ -54,9 +55,11 @@ class FeedScreen extends Component {
 				{ this.state.fontLoaded ? (
 				<View>
 					<FeedTopHeader />
+					<View style={styles.separatorStyle}></View>
 					<Text style={styles.textStyle}>
 						UNLOCK REWARDS
 					</Text>
+					<View style={styles.lineStyle}></View>
 					<FlatList
 						contentContainerStyle={styles.feedRewardsCardStyle}
 						horizontal={true}
@@ -67,9 +70,11 @@ class FeedScreen extends Component {
 						showsHorizontalScrollIndicator={false}
 						alwaysBounceHorizontal={true}
 	      	/>
+					<View style={styles.separatorStyle}></View>
 					<Text style={styles.textStyle}>
 						EARN WITH OFFERS
 					</Text>
+					<View style={styles.lineStyle}></View>
 					<FlatList
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
@@ -97,10 +102,21 @@ const styles = {
 		height: 50
 	},
 
+	separatorStyle: {
+		height: SCREEN_HEIGHT / 50,
+		backgroundColor: '#F4F4F4'
+	},
+
+	lineStyle: {
+		height: 1.5,
+		backgroundColor: '#F4F4F4',
+		marginTop: 10
+	},
+
 	feedRewardsCardStyle: {
 		flexDirection: 'row',
 		justifyContent: 'center',
-		marginBottom: 30
+		marginBottom: 15
 	},
 
 	textStyle: {

@@ -7,6 +7,7 @@ import OffersOnetime from './OffersOnetime';
 import OffersActivated from './OffersActivated';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class OffersScreen extends Component {
 	static navigationOptions = {
@@ -54,21 +55,27 @@ class OffersScreen extends Component {
 
 		return (
 			<ScrollView style={styles.scrollView}>
+				<View style={styles.separatorStyle}></View>
 				<View style={styles.offersActivatedStyle}>
 					<Text style={styles.textStyle}>
 						ACTIVATED OFFERS
 					</Text>
+					<View style={styles.lineStyle}></View>
 					<OffersActivated></OffersActivated>
 				</View>
+				<View style={styles.separatorStyle}></View>
 				<View style={styles.offersOnetimeStyle}>
 					<Text style={styles.textStyle}>
 						ONE-TIME OFFERS
 					</Text>
+					<View style={styles.lineStyle}></View>
 					<OffersOnetime></OffersOnetime>
 				</View>
+				<View style={styles.separatorStyle}></View>
 				<Text style={styles.textStyle}>
 					ONGOING OFFERS
 				</Text>
+				<View style={styles.lineStyle}></View>
 				<FlatList
 					data={this.props.offersPerpetual}
 					renderItem={({ item }) => (
@@ -122,6 +129,17 @@ const styles = {
 	iconStyle: {
 		width: 10,
 		height: 10
+	},
+
+	separatorStyle: {
+		height: SCREEN_HEIGHT / 50,
+		backgroundColor: '#F4F4F4'
+	},
+
+	lineStyle: {
+		height: 1.5,
+		backgroundColor: '#F4F4F4',
+		marginTop: 10
 	},
 
 	offersActivatedStyle: {
