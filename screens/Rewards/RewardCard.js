@@ -1,18 +1,34 @@
-import React, { Component } from 'react';
-import { Image, Dimensions, Text, View } from 'react-native';
-import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import React, {Component } from 'react';
+import { ScrollView, FlatList, View, Text, Image, Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { offersActivatedFetch } from '../../actions';
+import RewardProgress from "../../components/common/RewardProgress";
+import DetailHeader from "../../components/common/DetailHeader";
 import { Bar } from 'react-native-progress';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class RewardProgress extends Component {
-	render () {
+class RewardBrands extends Component {
 
+	componentDidMount () {
+		this.props.offersActivatedFetch();
+	}
+
+	render () {
 		const ll = require('../../images/starbucks-bg.jpg');
 		const check = require('../../images/hnm-logo.png');
+
 		return (
-			<View style={styles.main}>
+			<View>
+				<Image
+					style={styles.logoStyle}
+					source={ll}
+					// resizeMode="contain"
+				>
+					<Text style={styles.text1}> H&M </Text>
+				</Image>
+				<View style={styles.main}>
 				<View style={styles.row}>
 					<Image style={styles.check} source={check}/>
 					<Text style={styles.title}>$50 Gift Card </Text>
@@ -31,11 +47,31 @@ class RewardProgress extends Component {
 					<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>24%</Text> of 5,000 points</Text>
 				</View>
 			</View>
+			</View>
 		);
 	}
+
 }
 
 const styles = {
+	logoStyle: {
+		// flex: 1,
+		display: "flex",
+		height: SCREEN_HEIGHT/5,
+		width: SCREEN_WIDTH - (SCREEN_WIDTH/9),
+		marginLeft: SCREEN_WIDTH/18,
+		marginRight: SCREEN_WIDTH/18,
+		justifyContent: 'center',
+    	alignItems: 'center',
+    	opacity: 0.8,
+	},
+	text1: {
+		backgroundColor: "transparent",
+		fontWeight: "bold",
+		fontSize: 24,
+		color: "#ffffff"
+	},
+
 	title: {
 		display: "flex",
 		alignItems: "center",
@@ -54,10 +90,14 @@ const styles = {
 		paddingLeft: 12,
 	},
 	main: {
-		margin: SCREEN_WIDTH/18,
+		marginLeft: SCREEN_WIDTH/18,
+		marginRight: SCREEN_WIDTH/18,
+		marginBottom: SCREEN_WIDTH/18,
 		borderWidth: 2,
 		borderColor: "#F5F5F5",
 		borderRadius: 6,
+		borderTopRightRadius: 0,
+		borderTopLeftRadius: 0,
 	},
 	row: {
 		display: "flex",
@@ -78,6 +118,12 @@ const styles = {
 		paddingTop: 6,
 		paddingBottom: 6,
 	},
+
 };
 
-export default RewardProgress;
+const mapStateToProps = ({offers}) => {
+	const {offersActivated} = offers;
+	return {offersActivated};
+};
+
+export default connect(mapStateToProps, {offersActivatedFetch})(RewardBrands);

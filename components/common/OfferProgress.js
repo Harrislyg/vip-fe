@@ -15,8 +15,8 @@ class OfferProgress extends Component {
 				<Text style={styles.title}>ACCELERATED OFFER</Text>
 				<View style={styles.row}>
 					<AnimatedCircularProgress
-					  size={52}
-					  width={4}
+					  size={54}
+					  width={6}
 					  fill={50}
 					  rotation={-360}
 					  tintColor="#31EAD7"
@@ -91,8 +91,8 @@ const styles = {
 		alignItems: 'center',
     	justifyContent: 'center',
 		position: 'absolute',
-		top: 2,
-		left: 2,
+		top: 3,
+		left: 3,
 		width: 48,
 		height: 48,
 		borderRadius: 24,

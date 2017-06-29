@@ -15,9 +15,10 @@ class DetailDetail extends Component {
 		return (
 			<View>
 				<Text style={{ fontSize: 14, fontWeight: 'bold', color: "#8F8E94", paddingLeft: SCREEN_WIDTH/18 , paddingTop: SCREEN_WIDTH/18 }}>OFFER DETAIL</Text>
-				<Text style={{ fontSize: 14, color: "#8F8E94", lineHeight: 20, paddingTop: 5, paddingBottom: 12, paddingRight: SCREEN_WIDTH/18, paddingLeft: SCREEN_WIDTH/18, }}>Purchase needs to be done in one receipt.
-Offer expires on 31st December, 2017.
-Offer can only be used once.</Text>
+				<Text style={{ fontSize: 14, color: "#8F8E94", lineHeight: 20, paddingTop: 5, paddingBottom: 12, paddingRight: SCREEN_WIDTH/18, paddingLeft: SCREEN_WIDTH/18, }}>
+				Purchase needs to be done in one receipt.{"\n"}
+				Offer expires on 31st December, 2017.{"\n"}
+				Offer can only be used once.</Text>
 			</View>
 		);
 	}
