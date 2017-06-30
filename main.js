@@ -36,16 +36,24 @@ class App extends React.Component {
 					mode: 'modal'
 				})
 			},
-			Rewards: { screen: RewardsScreen }
-			// Home: {
-			// 	screen: StackNavigator({
-			// 		home: { screen: HomeScreen },
-			// 		homeoffer: { screen: HomeOffer }
-			// 	}, {
-			// 		headerMode: 'float',
-			// 		mode: 'modal'
-			// 	})
-			// }
+			// rewards: { screen: RewardsScreen },
+			rewards: {
+				screen: StackNavigator({
+					rewards: { screen: RewardsScreen }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			},
+			home: {
+				screen: StackNavigator({
+					home: { screen: HomeScreen },
+					homeoffer: { screen: HomeOffer }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			}
 		}, {
 			// tabBarPosition is an Android configuration
 			tabBarPosition: 'bottom',
