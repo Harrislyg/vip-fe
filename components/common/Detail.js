@@ -21,7 +21,7 @@ class Detail extends Component {
 		console.log(this.props);
 		return (
 			<View style={styles.main}>
-				<DetailHeader type={this.props.type}/>
+				<DetailHeader type={this.props.type} navigation={this.props.navigation}/>
 				{this.props.type === "reward" ? (
 					<RewardProgress />
 				) : (

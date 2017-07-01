@@ -6,17 +6,19 @@ import Detail from "../../components/common/Detail";
 class RewardDetail extends Component {
 	static navigationOptions = ({navigation}) => ({
 		tabBarVisible: false,
-		headerLeft: (<Button
-			title='Back'
-			onPress={() => navigation.goBack() }
-			backgroundColor='rgba(0,0,0,0)'
-			color='rgba(0,122,255,1)' />)
+		header: null,
+		// headerLeft: (<Button
+		// 	title='Back'
+		// 	onPress={() => navigation.goBack() }
+		// 	backgroundColor='rgba(0,0,0,0)'
+		// 	color='rgba(0,122,255,1)' />)
 	});
 
 	render () {
+		console.log(this.props.navigation);
 		return (
 			<ScrollView>
-				<Detail type="reward" action/>
+				<Detail type="reward" navigation={this.props.navigation} action />
 			</ScrollView>
 		);
 	}

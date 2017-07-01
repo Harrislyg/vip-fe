@@ -19,9 +19,25 @@ class RewardBrands extends Component {
 	}
 
 	render () {
-		const ll = require('../../images/starbucks-bg.jpg');
-		const check = require('../../images/hnm-logo.png');
+		// const ll = require('../../images/starbucks-bg.jpg');
+		// const check = require('../../images/hnm-logo.png');
 
+		const { company, points, feedOfferLogo } = this.props.feedCard;
+		console.log("Data rec", this.props.feedCard);
+		const feedRewardLogoImages = {
+			foodpanda: require('../../images/foodpanda-logo.png'),
+			gv: require('../../images/gv-logo.jpg'),
+			forever: require('../../images/forever21-logo.jpg'),
+			starbucks: require('../../images/starbucks-logo.png'),
+			beats: require('../../images/beats-logo.png'),
+			nike: require('../../images/nike-logo.jpg'),
+			gap: require('../../images/gap-logo.png'),
+			nikon: require('../../images/nikon-logo.png'),
+			apple: require('../../images/apple-logo.jpg'),
+			groupon: require('../../images/groupon-logo.png'),
+			sephora: require('../../images/sephora-logo.jpg'),
+			zara: require('../../images/zara-logo.jpg')
+		};
 		return (
 			<TouchableOpacity
 					onPress={this.onNavigate.bind(this)}
@@ -29,14 +45,12 @@ class RewardBrands extends Component {
 				>
 				<Image
 					style={styles.logoStyle}
-					source={ll}
+					source={feedRewardLogoImages[feedOfferLogo]}
 					// resizeMode="contain"
-				>
-					<Text style={styles.text1}> H&M </Text>
-				</Image>
+				/>
 				<View style={styles.main}>
 				<View style={styles.row}>
-					<Image style={styles.check} source={check}/>
+					<Image style={styles.check} source={feedRewardLogoImages[feedOfferLogo]}/>
 					<Text style={styles.title}>$50 Gift Card </Text>
 				</View>
 				<View style={styles.lower}>

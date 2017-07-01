@@ -1,10 +1,13 @@
 import React, {Component } from 'react';
+import { connect } from 'react-redux';
 import { ScrollView, FlatList, View, Text, Image, Dimensions } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import Detail from "../../components/common/Detail";
 import DetailHeader from "../../components/common/DetailHeader";
 import RewardBrands from "./RewardBrands";
 import RewardCard from "./RewardCard";
+import { feedRewardsFetch } from '../../actions'
+import { feedOffersFetch } from '../../actions'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -20,6 +23,11 @@ class RewardsScreen extends Component {
 		}
 	}
 	// const a = [1,2,3,4,5,6];
+
+	componentDidMount() {
+		this.props.feedRewardsFetch();
+		this.props.feedOffersFetch();
+	}
 
 	render () {
 		const a = [1,2,3,4,5,6];
@@ -39,7 +47,7 @@ class RewardsScreen extends Component {
 					<FlatList
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
-						data={a}
+						data={this.props.feedOffers}
 						renderItem={({item}) => <RewardCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsVerticalScrollIndicator={false}
@@ -65,4 +73,12 @@ const styles = {
 		paddingBottom: 6,
 	}
 }
-export default RewardsScreen;
+
+const mapStateToProps = ({feed}) => {
+  const {feedRewards, feedOffers} = feed
+  return {feedRewards, feedOffers}
+
+}
+
+export default connect(mapStateToProps, {feedRewardsFetch, feedOffersFetch}) (RewardsScreen);
+// export default RewardsScreen;

@@ -6,17 +6,18 @@ import Detail from "../../components/common/Detail";
 class OfferDetail extends Component {
 	static navigationOptions = ({navigation}) => ({
 		tabBarVisible: false,
-		headerLeft: (<Button
-			title='Back'
-			onPress={() => navigation.goBack() }
-			backgroundColor='rgba(0,0,0,0)'
-			color='rgba(0,122,255,1)' />)
+		header: null,
+		// headerLeft: (<Button
+		// 	title='Back'
+		// 	onPress={() => navigation.goBack() }
+		// 	backgroundColor='rgba(0,0,0,0)'
+		// 	color='rgba(0,122,255,1)' />)
 	});
 
 	render () {
 		return (
 			<ScrollView>
-				<Detail type="offer" action/>
+				<Detail type="offer" navigation={this.props.navigation} action/>
 			</ScrollView>
 		);
 	}
