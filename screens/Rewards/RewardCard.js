@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import { ScrollView, FlatList, View, Text, Image, Dimensions } from 'react-native';
+import { ScrollView, FlatList, View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { offersActivatedFetch } from '../../actions';
 import RewardProgress from "../../components/common/RewardProgress";
@@ -14,13 +14,19 @@ class RewardBrands extends Component {
 	componentDidMount () {
 		this.props.offersActivatedFetch();
 	}
+	onNavigate () {
+		this.props.onNavigate.navigate('rewardDetail');
+	}
 
 	render () {
 		const ll = require('../../images/starbucks-bg.jpg');
 		const check = require('../../images/hnm-logo.png');
 
 		return (
-			<View>
+			<TouchableOpacity
+					onPress={this.onNavigate.bind(this)}
+					activeOpacity={1}
+				>
 				<Image
 					style={styles.logoStyle}
 					source={ll}
@@ -46,8 +52,8 @@ class RewardBrands extends Component {
 					/>
 					<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>24%</Text> of 5,000 points</Text>
 				</View>
-			</View>
-			</View>
+				</View>
+			</TouchableOpacity>
 		);
 	}
 

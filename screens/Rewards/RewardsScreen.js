@@ -40,7 +40,7 @@ class RewardsScreen extends Component {
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
 						data={a}
-						renderItem={({item}) => <RewardCard feedCard={item}  />}
+						renderItem={({item}) => <RewardCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsVerticalScrollIndicator={false}
 						alwaysBounceVertical={true}

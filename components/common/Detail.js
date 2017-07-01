@@ -20,7 +20,7 @@ class Detail extends Component {
 	render () {
 		console.log(this.props);
 		return (
-			<View>
+			<View style={styles.main}>
 				<DetailHeader type={this.props.type}/>
 				{this.props.type === "reward" ? (
 					<RewardProgress />
@@ -35,11 +35,14 @@ class Detail extends Component {
 }
 
 const styles = {
+	main: {
+		backgroundColor: "#fff",
+	},
 	logoStyle: {
 		alignSelf: 'center',
 		height: 50,
 		width: 50,
-		borderColor: '#fff',
+		borderColor: "#fff",
 		borderWidth: 1,
 		borderRadius: 25,
 		marginTop: -25

@@ -17,7 +17,7 @@ class OffersActivated extends Component {
 				horizontal
 				enableEmptySections
 				data={this.props.offersActivated}
-				renderItem={({item}) => <OffersCircleCard offersCard={item} />}
+				renderItem={({item}) => <OffersCircleCard offersCard={item} onNavigate={this.props.onNavigate} />}
 				keyExtractor={item => item.company}
 				showsHorizontalScrollIndicator={false}
 				alwaysBounceHorizontal

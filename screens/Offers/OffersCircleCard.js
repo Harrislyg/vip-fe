@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Dimensions, Image, View } from 'react-native';
+import { Text, Dimensions, Image, View, TouchableOpacity} from 'react-native';
 import { Card } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -9,6 +9,9 @@ class OffersCircleCard extends Component {
 	// onNavigate () {
 	// 	this.props.onNavigate.navigate('feedDetail');
 	// }
+	onNavigate () {
+		this.props.onNavigate.navigate('offerDetail');
+	}
 	render () {
 		// console.log('Row', this.props.onNavigate);
 		const { company, points, feedOfferLogo } = this.props.offersCard;
@@ -21,6 +24,10 @@ class OffersCircleCard extends Component {
 
 		};
 		return (
+			<TouchableOpacity
+					onPress={this.onNavigate.bind(this)}
+					activeOpacity={1}
+				>
 			<View style={styles.viewStyle}>
 				<Card
 					containerStyle={styles.cardStyle}
@@ -34,6 +41,7 @@ class OffersCircleCard extends Component {
 					/>
 				</Card>
 			</View>
+			</TouchableOpacity>
 		);
 	}
 }

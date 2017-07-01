@@ -12,6 +12,8 @@ import HomeOffer from './screens/Home/HomeOffer';
 import FeedScreen from './screens/Feed/FeedScreen';
 import FeedCardDetail from './screens/Feed/FeedCardDetail';
 import AuthScreen from './screens/Auth/AuthScreen';
+import RewardDetail from "./screens/Rewards/RewardDetail";
+import OfferDetail from "./screens/Offers/OfferDetail";
 
 class App extends React.Component {
 	render () {
@@ -30,7 +32,8 @@ class App extends React.Component {
 			},
 			Offers: {
 				screen: StackNavigator({
-					offers: { screen: OffersScreen }
+					offers: { screen: OffersScreen },
+					offerDetail: { screen: OfferDetail }
 				}, {
 					headerMode: 'float',
 					mode: 'modal'
@@ -39,7 +42,8 @@ class App extends React.Component {
 			// rewards: { screen: RewardsScreen },
 			rewards: {
 				screen: StackNavigator({
-					rewards: { screen: RewardsScreen }
+					rewards: { screen: RewardsScreen },
+					rewardDetail: { screen: RewardDetail }
 				}, {
 					headerMode: 'float',
 					mode: 'modal'

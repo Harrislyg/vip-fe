@@ -64,8 +64,8 @@ class FeedScreen extends Component {
 						contentContainerStyle={styles.feedRewardsCardStyle}
 						horizontal={true}
 						enableEmptySections
-		        data={this.props.feedRewards}
-		        renderItem={({item}) => <FeedCard feedCard={item} onNavigate={this.props.navigation} />}
+		        		data={this.props.feedRewards}
+		        		renderItem={({item}) => <FeedCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsHorizontalScrollIndicator={false}
 						alwaysBounceHorizontal={true}

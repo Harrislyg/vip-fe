@@ -86,10 +86,9 @@ const styles = {
 		display: "flex",
 		flexDirection: "row",
 		alignItems: "center",
+		justifyContent: 'center',
 	},
 	imageStyle: {
-		alignItems: 'center',
-    	justifyContent: 'center',
 		position: 'absolute',
 		top: 3,
 		left: 3,
