@@ -55,10 +55,15 @@ class OffersScreen extends Component {
 
 		return (
 			<ScrollView style={styles.scrollView}>
+				<View style={styles.viewStyle}>
+					<View style={styles.pointViewStyle}>
+						<Text style={styles.pointStyle}>7535</Text>
+					</View>
+				</View>
 				<View style={styles.separatorStyle}></View>
 				<View style={styles.offersActivatedStyle}>
 					<Text style={styles.textStyle}>
-						ACTIVATED OFFERS
+						ACTIVE OFFERS
 					</Text>
 					<View style={styles.lineStyle}></View>
 					<OffersActivated></OffersActivated>
@@ -108,6 +113,31 @@ const styles = {
 		borderBottomWidth: 0
 	},
 
+	viewStyle: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginTop: 10,
+		marginBottom: 10
+	},
+
+	pointViewStyle: {
+		justifyContent: 'center',
+		width: SCREEN_WIDTH / 7,
+		height: SCREEN_HEIGHT / 27,
+		borderRadius: 2,
+		backgroundColor: '#31EAD7',
+		padding: 0
+	},
+
+	pointStyle: {
+		fontFamily: 'ABeeZee',
+		color: '#fff',
+		fontSize: 20,
+		fontWeight: '900',
+		alignSelf: 'center',
+		margin: 0
+	},
+
 	textStyle: {
 		marginTop: 15,
 		marginLeft: 12,
@@ -143,7 +173,7 @@ const styles = {
 	},
 
 	offersActivatedStyle: {
-		marginBottom: 10
+		marginBottom: 7
 	},
 
 	offersOnetimeStyle: {

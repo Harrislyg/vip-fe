@@ -72,7 +72,7 @@ class FeedScreen extends Component {
 	      	/>
 					<View style={styles.separatorStyle}></View>
 					<Text style={styles.textStyle}>
-						EARN WITH OFFERS
+						FEATURED OFFERS
 					</Text>
 					<View style={styles.lineStyle}></View>
 					<FlatList

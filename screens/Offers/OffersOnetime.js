@@ -23,7 +23,7 @@ class OffersOnetime extends Component {
 		const feedOfferLogoImages = {
 			uniqlo: require('../../images/uniqlo-logo.png'),
 			expedia: require('../../images/expedia-logo.png'),
-			glints: require('../../images/glints-logo.png'),
+			carousell: require('../../images/carousell-logo.png'),
 			citi: require('../../images/citi-logo.png'),
 			ez: require('../../images/ez-logo.png'),
 			underarmour: require('../../images/underarmour-logo.png'),

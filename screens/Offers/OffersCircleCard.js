@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, Dimensions, Image, View } from 'react-native';
+import { Dimensions, Image, View } from 'react-native';
 import { Card } from 'react-native-elements';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -22,17 +23,27 @@ class OffersCircleCard extends Component {
 		};
 		return (
 			<View style={styles.viewStyle}>
-				<Card
-					containerStyle={styles.cardStyle}
-					key={company}
-				>
-					<Image
-						style={styles.imageStyle}
-						source={feedOfferLogoImages[feedOfferLogo]}
-						resizeMode="cover"
-						key={company}
-					/>
-				</Card>
+						<Card
+							containerStyle={styles.cardStyle}
+							key={company}
+						>
+							<Image
+								style={styles.imageStyle}
+								source={feedOfferLogoImages[feedOfferLogo]}
+								resizeMode="cover"
+								key={company}
+							/>
+					</Card>
+					<AnimatedCircularProgress
+						size={SCREEN_WIDTH / 3.5}
+						width={4}
+						fill={50}
+						rotation={-360}
+						tintColor="#31EAD7"
+						backgroundColor="#ffffff"
+						style={styles.containerStyle}
+					>
+				</AnimatedCircularProgress>
 			</View>
 		);
 	}
@@ -54,7 +65,8 @@ const styles = {
 			height: 0
 		},
 		shadowRadius: 5,
-		shadowOpacity: 0.3
+		shadowOpacity: 0.3,
+		zIndex: 2
 	},
 
 	viewStyle: {
@@ -77,7 +89,14 @@ const styles = {
 		height: SCREEN_WIDTH / 3.8,
 		borderRadius: SCREEN_WIDTH / 7.6,
 		padding: 0,
-		margin: 0
+		margin: 0,
+		zIndex: 2
+	},
+
+	containerStyle: {
+		marginTop: -113.5,
+		marginLeft: 13,
+		zIndex: 1
 	}
 
 };
