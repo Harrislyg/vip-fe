@@ -18,10 +18,7 @@ import OfferDetail from "./screens/Offers/OfferDetail";
 class App extends React.Component {
 	render () {
 		const MainNavigator = TabNavigator({
-			// auth: { screen: AuthScreen },
-			// main: {
-			// 	screen: TabNavigator({
-			Feed: {
+			Home: {
 				screen: StackNavigator({
 					feed: { screen: FeedScreen },
 					feedDetail: { screen: FeedCardDetail }
@@ -40,7 +37,7 @@ class App extends React.Component {
 				})
 			},
 			// rewards: { screen: RewardsScreen },
-			rewards: {
+			Rewards: {
 				screen: StackNavigator({
 					rewards: { screen: RewardsScreen },
 					rewardDetail: { screen: RewardDetail }
@@ -49,7 +46,7 @@ class App extends React.Component {
 					mode: 'modal'
 				})
 			},
-			home: {
+			Account: {
 				screen: StackNavigator({
 					home: { screen: HomeScreen },
 					homeoffer: { screen: HomeOffer }
@@ -67,12 +64,6 @@ class App extends React.Component {
 			},
 			lazy: true
 		});
-		// }, {
-		// 	navigationOptions: {
-		// 		tabBarVisible: false
-		// 	},
-		// 	lazy: true
-		// });
 
 		return (
 			<Provider store={store}>

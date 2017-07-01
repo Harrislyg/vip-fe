@@ -11,9 +11,9 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class HomeScreen extends Component {
 	static navigationOptions = {
-		title: 'Home',
+		title: 'Account',
 		tabBarIcon: ({ tintColor }) => {
-			return <Icon name="favorite" size={29} color={tintColor} />
+			return <Icon name="person" type="octicons" size={29} color={tintColor} />
 
 		}
 
