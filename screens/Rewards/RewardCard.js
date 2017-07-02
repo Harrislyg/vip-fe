@@ -15,7 +15,7 @@ class RewardBrands extends Component {
 		this.props.offersActivatedFetch();
 	}
 	onNavigate () {
-		this.props.onNavigate.navigate('rewardDetail');
+		this.props.onNavigate.navigate('rewardDetail', { data: this.props.feedCard });
 	}
 
 	render () {

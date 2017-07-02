@@ -19,15 +19,16 @@ class Detail extends Component {
 	};
 	render () {
 		console.log(this.props);
+		const { company, points, feedOfferLogo } = this.props.data;
 		return (
 			<View style={styles.main}>
-				<DetailHeader type={this.props.type} navigation={this.props.navigation}/>
-				{this.props.type === "reward" ? (
-					<RewardProgress />
-				) : (
-					<OfferProgress />
-				)}
-				<DetailDescription type={this.props.type} action/>
+				<DetailHeader type={this.props.type} image={feedOfferLogo} navigation={this.props.navigation}/>
+					{this.props.type === "reward" ? (
+						<RewardProgress />
+					) : (
+						<OfferProgress />
+					)}
+				<DetailDescription type={this.props.type} desc={this.props.data.description} action/>
 				<DetailDetail type={this.props.type}/>
 			</View>
 		);

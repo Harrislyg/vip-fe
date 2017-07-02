@@ -7,12 +7,11 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class OfferProgress extends Component {
 	render () {
-
 		const ll = require('../../images/starbucks-bg.jpg');
 		const check = require('../../images/Check.png');
 		return (
 			<View style={styles.main}>
-				<Text style={styles.title}>ACCELERATED OFFER</Text>
+				<Text style={styles.title}>BONUS OFFER</Text>
 				<View style={styles.row}>
 					<AnimatedCircularProgress
 					  size={54}
@@ -33,7 +32,9 @@ class OfferProgress extends Component {
 						</Text>
 						<View style={styles.row}>
 							<Image style={styles.check} source={check}/>
-							<Text style={styles.status}>Offer active | 50% completed</Text>
+							{ active &&
+								<Text style={styles.status}>Offer active | 50% completed</Text>
+							}
 						</View>
 					</View>
 				</View>
@@ -56,7 +57,6 @@ const styles = {
 		paddingBottom: 5,
 	},
 	title: {
-		// paddingBottom: 8,
 		paddingTop: 5,
 		color: "#8F8E94",
 		fontSize: 10,
