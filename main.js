@@ -12,14 +12,13 @@ import HomeOffer from './screens/Home/HomeOffer';
 import FeedScreen from './screens/Feed/FeedScreen';
 import FeedCardDetail from './screens/Feed/FeedCardDetail';
 import AuthScreen from './screens/Auth/AuthScreen';
+import RewardDetail from "./screens/Rewards/RewardDetail";
+import OfferDetail from "./screens/Offers/OfferDetail";
 
 class App extends React.Component {
 	render () {
 		const MainNavigator = TabNavigator({
-			// auth: { screen: AuthScreen },
-			// main: {
-			// 	screen: TabNavigator({
-			Feed: {
+			Home: {
 				screen: StackNavigator({
 					feed: { screen: FeedScreen },
 					feedDetail: { screen: FeedCardDetail }
@@ -30,22 +29,32 @@ class App extends React.Component {
 			},
 			Offers: {
 				screen: StackNavigator({
-					offers: { screen: OffersScreen }
+					offers: { screen: OffersScreen },
+					offerDetail: { screen: OfferDetail }
 				}, {
 					headerMode: 'float',
 					mode: 'modal'
 				})
 			},
-			Rewards: { screen: RewardsScreen }
-			// Home: {
-			// 	screen: StackNavigator({
-			// 		home: { screen: HomeScreen },
-			// 		homeoffer: { screen: HomeOffer }
-			// 	}, {
-			// 		headerMode: 'float',
-			// 		mode: 'modal'
-			// 	})
-			// }
+			// rewards: { screen: RewardsScreen },
+			Rewards: {
+				screen: StackNavigator({
+					rewards: { screen: RewardsScreen },
+					rewardDetail: { screen: RewardDetail }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			},
+			Account: {
+				screen: StackNavigator({
+					home: { screen: HomeScreen },
+					homeoffer: { screen: HomeOffer }
+				}, {
+					headerMode: 'float',
+					mode: 'modal'
+				})
+			}
 		}, {
 			// tabBarPosition is an Android configuration
 			tabBarPosition: 'bottom',
@@ -55,12 +64,6 @@ class App extends React.Component {
 			},
 			lazy: true
 		});
-		// }, {
-		// 	navigationOptions: {
-		// 		tabBarVisible: false
-		// 	},
-		// 	lazy: true
-		// });
 
 		return (
 			<Provider store={store}>

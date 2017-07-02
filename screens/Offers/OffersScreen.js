@@ -66,7 +66,7 @@ class OffersScreen extends Component {
 						ACTIVE OFFERS
 					</Text>
 					<View style={styles.lineStyle}></View>
-					<OffersActivated></OffersActivated>
+					<OffersActivated onNavigate={this.props.navigation}></OffersActivated>
 				</View>
 				<View style={styles.separatorStyle}></View>
 				<View style={styles.offersOnetimeStyle}>

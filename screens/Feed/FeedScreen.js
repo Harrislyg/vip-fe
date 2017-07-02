@@ -17,7 +17,7 @@ class FeedScreen extends Component {
 		title: null,
 		headerLeft: (<Image source={require('../../images/max-logo.png')} style={{width: 30, height: 30, marginLeft: SCREEN_WIDTH / 2 - 15, marginTop: 10, marginBottom: 10}} />),
 		tabBarIcon: ({ tintColor }) => {
-			return <Icon name="favorite" size={29} color={tintColor} />
+			return <Icon name="home" size={29} color={tintColor} />
 		},
 		headerStyle: {
 			backgroundColor: '#fff'
@@ -64,8 +64,8 @@ class FeedScreen extends Component {
 						contentContainerStyle={styles.feedRewardsCardStyle}
 						horizontal={true}
 						enableEmptySections
-		        data={this.props.feedRewards}
-		        renderItem={({item}) => <FeedCard feedCard={item} onNavigate={this.props.navigation} />}
+		        		data={this.props.feedRewards}
+		        		renderItem={({item}) => <FeedCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsHorizontalScrollIndicator={false}
 						alwaysBounceHorizontal={true}
