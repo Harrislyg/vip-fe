@@ -94,8 +94,8 @@ const styles = {
 	},
 
 	containerStyle: {
-		marginTop: -113.5,
-		marginLeft: 13,
+		marginTop: -SCREEN_WIDTH / 3.64,
+		marginLeft: SCREEN_WIDTH / 28.846,
 		zIndex: 1
 	}
 

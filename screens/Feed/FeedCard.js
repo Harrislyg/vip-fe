@@ -15,7 +15,7 @@ class FeedCard extends Component {
 		const feedRewardLogoImages = {
 			foodpanda: require('../../images/foodpanda-logo.png'),
 			gv: require('../../images/gv-logo.jpg'),
-			forever: require('../../images/forever21-logo.jpg'),
+			forever21: require('../../images/forever21-logo.jpg'),
 			starbucks: require('../../images/starbucks-logo.png'),
 			beats: require('../../images/beats-logo.png'),
 			nike: require('../../images/nike-logo.jpg'),

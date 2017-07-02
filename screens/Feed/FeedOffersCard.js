@@ -11,9 +11,16 @@ class FeedOffersCard extends Component {
 		this.props.onNavigate.navigate('feedDetail');
 	}
 
+	renderIcon (pointsOne, pointsTwo, feedOfferLogoImages) {
+		if (pointsTwo === '$1') {
+			return <Text><Image style={styles.iconStyle} source={feedOfferLogoImages['bolt']} /><Text style={styles.boldStyle}> {pointsOne}</Text><Text> per </Text><Text style={styles.boldStyle}>{pointsTwo}</Text><Text> spent</Text></Text>;
+		}
+		return <Text><Image style={styles.iconStyle} source={feedOfferLogoImages['piggy']} /><Text style={styles.boldStyle}> {pointsOne}</Text><Text> {pointsTwo}</Text></Text>;
+	}
+
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company, feedOfferLogo, feedOfferBg, points } = this.props.feedCard;
+		const { company, feedOfferLogo, feedOfferBg, pointsOne, pointsTwo } = this.props.feedCard;
 		const feedOfferLogoImages = {
 			hnmBg: require('../../images/hnm-bg.jpg'),
 			watsonsBg: require('../../images/watsons-bg.jpg'),
@@ -27,7 +34,9 @@ class FeedOffersCard extends Component {
 			zaloraBg: require('../../images/zalora-bg.jpg'),
 			deliverooBg: require('../../images/deliveroo-bg.jpg'),
 			underarmourBg: require('../../images/underarmour-bg.jpg'),
-			redmartBg: require('../../images/redmart-bg.png')
+			redmartBg: require('../../images/redmart-bg.png'),
+			bolt: require('../../images/bolt-icon.png'),
+			piggy: require('../../images/piggy-icon.png')
 
 		};
 		return (
@@ -46,9 +55,7 @@ class FeedOffersCard extends Component {
 						key={company}
 					/>
 					<SmallCircleLogo image={feedOfferLogo} />
-					<Text style={styles.textStyle}>
-						{points}
-					</Text>
+					<Text style={styles.subtitleStyle}>{this.renderIcon(pointsOne, pointsTwo, feedOfferLogoImages)}</Text>
 				</TouchableOpacity>
 			</Card>
 		);
@@ -88,12 +95,17 @@ const styles = {
 	// 	margin: 0
 	// },
 
-	textStyle: {
+	subtitleStyle: {
 		alignSelf: 'center',
+		fontSize: 11,
 		color: '#8F8E94',
-		marginTop: 12,
-		marginBottom: 0
+		marginLeft: 11,
+		marginTop: 12
+	},
 
+	boldStyle: {
+		color: '#757575',
+		fontWeight: '500'
 	},
 
 	imageStyle: {
@@ -103,6 +115,11 @@ const styles = {
 		borderRadius: 2,
 		padding: 0,
 		margin: 0
+	},
+
+	iconStyle: {
+		width: 10,
+		height: 10
 	}
 
 };

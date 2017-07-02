@@ -1,16 +1,16 @@
 export const feedOffersData = [
-	{ company: 'Uniqlo', points: '15 pts per $1 spent', feedOfferLogo: 'uniqlo', feedOfferBg: 'uniqloBg' },
-	{ company: 'Grab', points: '15 pts per $1 spent', feedOfferLogo: 'grab', feedOfferBg: 'grabBg' },
-	{ company: 'Under Armour', points: '1 pts per $1 spent', feedOfferLogo: 'underarmour', feedOfferBg: 'underarmourBg' },
-	{ company: 'EZ', points: 'Earn 9000 pts', feedOfferLogo: 'ez', feedOfferBg: 'ezBg' },
-	{ company: 'Expedia', points: '100 pts pts per $1 spent', feedOfferLogo: 'expedia', feedOfferBg: 'expediaBg' },
-	{ company: 'Starbucks', points: '15 pts per $1 spent', feedOfferLogo: 'starbucks', feedOfferBg: 'starbucksBg' },
-	{ company: 'Zalora', points: '10 pts per $1 spent', feedOfferLogo: 'zalora', feedOfferBg: 'zaloraBg' },
-	{ company: 'Watsons', points: '10 pts per $1 spent', feedOfferLogo: 'watsons', feedOfferBg: 'watsonsBg' },
-	{ company: 'Groupon', points: '15 pts per $1 spent', feedOfferLogo: 'groupon', feedOfferBg: 'grouponBg' },
-	{ company: 'Glints', points: 'Earn 7500 pts', feedOfferLogo: 'glints', feedOfferBg: 'glintsBg' },
-	{ company: 'H&M', points: '15 pts per $1 spent', feedOfferLogo: 'hnm', feedOfferBg: 'hnmBg' },
-	{ company: 'Redmart', points: '15 pts per $1 spent', feedOfferLogo: 'redmart', feedOfferBg: 'redmartBg' },
-	{ company: 'Deliveroo', points: '1 pts per $1 spent', feedOfferLogo: 'deliveroo', feedOfferBg: 'deliverooBg' }
+	{ company: 'Uniqlo', pointsOne: '100 pts', pointsTwo: '$1', feedOfferLogo: 'uniqlo', feedOfferBg: 'uniqloBg' },
+	{ company: 'Grab', pointsOne: '150 pts', pointsTwo: '$1', feedOfferLogo: 'grab', feedOfferBg: 'grabBg' },
+	{ company: 'Under Armour', pointsOne: '90 pts', pointsTwo: '$1', feedOfferLogo: 'underarmour', feedOfferBg: 'underarmourBg' },
+	{ company: 'EZ', pointsOne: '120 pts', pointsTwo: '$1', feedOfferLogo: 'ez', feedOfferBg: 'ezBg' },
+	{ company: 'Expedia', pointsOne: '140 pts', pointsTwo: '$1', feedOfferLogo: 'expedia', feedOfferBg: 'expediaBg' },
+	{ company: 'Starbucks', pointsOne: '135 pts', pointsTwo: '$1', feedOfferLogo: 'starbucks', feedOfferBg: 'starbucksBg' },
+	{ company: 'Zalora', pointsOne: '70 pts', pointsTwo: '$1', feedOfferLogo: 'zalora', feedOfferBg: 'zaloraBg' },
+	{ company: 'Watsons', pointsOne: '130 pts', pointsTwo: '$1', feedOfferLogo: 'watsons', feedOfferBg: 'watsonsBg' },
+	{ company: 'Groupon', pointsOne: '70 pts', pointsTwo: '$1', feedOfferLogo: 'groupon', feedOfferBg: 'grouponBg' },
+	{ company: 'Glints', pointsOne: 'Earn 20000 pts', pointsTwo: 'for signup', feedOfferLogo: 'glints', feedOfferBg: 'glintsBg' },
+	{ company: 'H&M', pointsOne: '130 pts', pointsTwo: '$1', feedOfferLogo: 'hnm', feedOfferBg: 'hnmBg' },
+	{ company: 'Redmart', pointsOne: '110 pts', pointsTwo: '$1', feedOfferLogo: 'redmart', feedOfferBg: 'redmartBg' },
+	{ company: 'Deliveroo', pointsOne: 'Earn 20000 pts', pointsTwo: 'for signup', feedOfferLogo: 'deliveroo', feedOfferBg: 'deliverooBg' }
 
 ];

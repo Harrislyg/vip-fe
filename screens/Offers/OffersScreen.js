@@ -71,7 +71,7 @@ class OffersScreen extends Component {
 				<View style={styles.separatorStyle}></View>
 				<View style={styles.offersOnetimeStyle}>
 					<Text style={styles.textStyle}>
-						ONE-TIME OFFERS
+						BONUS OFFERS
 					</Text>
 					<View style={styles.lineStyle}></View>
 					<OffersOnetime></OffersOnetime>

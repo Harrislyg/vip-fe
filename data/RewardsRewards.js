@@ -1,0 +1,26 @@
+export const rewardSearchData = [
+	{ company: 'Nike', points: '15000', feedRewardLogo: 'nike' },
+	{ company: 'GAP', points: '10000', feedRewardLogo: 'gap' },
+	{ company: 'Sephora', points: '10000', feedRewardLogo: 'sephora' },
+	{ company: 'Apple', points: '15000', feedRewardLogo: 'apple' },
+	{ company: 'GV', points: '15000', feedRewardLogo: 'gv' },
+	{ company: 'Forever 21', points: '10000', feedRewardLogo: 'forever' },
+	{ company: 'Starbucks', points: '10000', feedRewardLogo: 'starbucks' },
+	{ company: 'Groupon', points: '10000', feedRewardLogo: 'groupon' },
+	{ company: 'FoodPanda', points: '10000', feedRewardLogo: 'foodpanda' },
+	{ company: 'Zara', points: '10000', feedRewardLogo: 'zara' },
+	{ company: 'Beats', points: '15000', feedRewardLogo: 'beats' }
+
+];
+
+export const rewardsAvailableData = [
+	{ company: 'Apple', value: '10', points: '10000', feedRewardLogo: 'apple', feedRewardBg: 'appleBg' },
+	{ company: 'Zara', value: '10', points: '10000', feedRewardLogo: 'zara', feedRewardBg: 'zaraBg' },
+	{ company: 'Beats', value: '10', points: '10000', feedRewardLogo: 'beats', feedRewardBg: 'beatsBg' },
+	{ company: 'Forever 21', value: '10', points: '10000', feedRewardLogo: 'forever21', feedRewardBg: 'forever21Bg' },
+	{ company: 'Adidas', value: '10', points: '10000', feedRewardLogo: 'adidas', feedRewardBg: 'adidasBg' },
+	{ company: 'Uber', value: '10', points: '10000', feedRewardLogo: 'uber', feedRewardBg: 'uberBg' },
+	{ company: 'Expedia', value: '10', points: '10000', feedRewardLogo: 'expedia', feedRewardBg: 'expediaBg' },
+	{ company: 'Underarmour', value: '10', points: '10000', feedRewardLogo: 'underarmour', feedRewardBg: 'deliverooBg' }
+
+];
