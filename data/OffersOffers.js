@@ -18,10 +18,10 @@ export const offersOnetimeData = [
 ];
 
 export const offersActivatedData = [
-	{ company: 'Uniqlo', points: '15 pts per $1 spent', feedOfferLogo: 'uniqlo' },
-	{ company: 'Adidas', points: '15 pts per $1 spent', feedOfferLogo: 'adidas' },
-	{ company: 'Uber', points: '15 pts per $1 spent', feedOfferLogo: 'uber' },
-	{ company: 'Din Tai Fung', points: '15 pts per $1 spent', feedOfferLogo: 'dintaifung' },
-	{ company: 'Ikea', points: '15 pts per $1 spent', feedOfferLogo: 'ikea' }
+	{ company: 'Uniqlo', points: '15 pts per $1 spent', progress: 58, feedOfferLogo: 'uniqlo' },
+	{ company: 'Adidas', points: '15 pts per $1 spent', progress: 36, feedOfferLogo: 'adidas' },
+	{ company: 'Uber', points: '15 pts per $1 spent', progress: 70, feedOfferLogo: 'uber' },
+	{ company: 'Din Tai Fung', points: '15 pts per $1 spent', progress: 21, feedOfferLogo: 'dintaifung' },
+	{ company: 'Ikea', points: '15 pts per $1 spent', progress: 80, feedOfferLogo: 'ikea' }
 
 ];

@@ -15,7 +15,7 @@ class OffersCircleCard extends Component {
 	}
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company, points, feedOfferLogo } = this.props.offersCard;
+		const { company, progress, feedOfferLogo } = this.props.offersCard;
 		const feedOfferLogoImages = {
 			uniqlo: require('../../images/uniqlo-activated-logo.png'),
 			adidas: require('../../images/adidas-logo.jpg'),
@@ -44,7 +44,7 @@ class OffersCircleCard extends Component {
 					<AnimatedCircularProgress
 						size={SCREEN_WIDTH / 3.5}
 						width={4}
-						fill={50}
+						fill={progress}
 						rotation={-360}
 						tintColor="#31EAD7"
 						backgroundColor="#ffffff"
