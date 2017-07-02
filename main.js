@@ -57,6 +57,7 @@ class App extends React.Component {
 			// }
 		}, {
 			// tabBarPosition is an Android configuration
+			initialRouteName: 'Offers',
 			tabBarPosition: 'bottom',
 			tabBarOptions: {
 				labelStyle: { fontSize: 10, marginTop: -5 },
