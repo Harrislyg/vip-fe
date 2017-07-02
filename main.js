@@ -45,16 +45,16 @@ class App extends React.Component {
 					headerMode: 'float',
 					mode: 'modal'
 				})
-			},
-			Account: {
-				screen: StackNavigator({
-					home: { screen: HomeScreen },
-					homeoffer: { screen: HomeOffer }
-				}, {
-					headerMode: 'float',
-					mode: 'modal'
-				})
 			}
+			// Account: {
+			// 	screen: StackNavigator({
+			// 		home: { screen: HomeScreen },
+			// 		homeoffer: { screen: HomeOffer }
+			// 	}, {
+			// 		headerMode: 'float',
+			// 		mode: 'modal'
+			// 	})
+			// }
 		}, {
 			// tabBarPosition is an Android configuration
 			tabBarPosition: 'bottom',

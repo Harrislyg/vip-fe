@@ -14,8 +14,8 @@ export const rewardSearchData = [
 ];
 
 export const rewardsAvailableData = [
-	{ company: 'Apple', value: '10', points: '10000', descriptio: 'Apple Inc. is an American multinational technology company headquartered in Cupertino, California that designs, develops, and sells consumer electronics, computer software, and online services.', feedRewardLogo: 'apple', feedRewardBg: 'appleBg' },
-	{ company: 'Zara', value: '10', points: '10000', feedRewardLogo: 'zara', feedRewardBg: 'zaraBg' },
+	{ company: 'Apple', value: '10', points: '10000', description: 'Apple Inc. is an American multinational technology company headquartered in Cupertino, California that designs, develops, and sells consumer electronics, computer software, and online services.', feedRewardLogo: 'apple', feedRewardBg: 'appleBg' },
+	{ company: 'Zara', value: '10', points: '10000', description: "The company was founded in 1975 by Amancio Ortega and Rosalía Mera. It is the main brand of the Inditex group,[3] the world's largest apparel retailer.", feedRewardLogo: 'zara', feedRewardBg: 'zaraBg' },
 	{ company: 'Beats', value: '10', points: '10000', feedRewardLogo: 'beats', feedRewardBg: 'beatsBg' },
 	{ company: 'Forever 21', value: '10', points: '10000', feedRewardLogo: 'forever21', feedRewardBg: 'forever21Bg' },
 	{ company: 'Adidas', value: '10', points: '10000', feedRewardLogo: 'adidas', feedRewardBg: 'adidasBg' },

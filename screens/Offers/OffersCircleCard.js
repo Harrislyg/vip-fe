@@ -102,7 +102,7 @@ const styles = {
 	},
 
 	containerStyle: {
-		marginTop: -SCREEN_WIDTH / 3.64,
+		marginTop: -SCREEN_WIDTH / 3.645,
 		marginLeft: SCREEN_WIDTH / 28.846,
 		zIndex: 1
 	}
