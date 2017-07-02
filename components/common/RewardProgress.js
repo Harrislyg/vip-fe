@@ -9,7 +9,7 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 class RewardProgress extends Component {
 	render () {
 
-		const ll = require('../../images/starbucks-bg.jpg');
+		const ll = require('../../images/starbucks-bg.png');
 		const check = require('../../images/hnm-logo.png');
 		return (
 			<View style={styles.main}>

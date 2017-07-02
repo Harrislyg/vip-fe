@@ -8,6 +8,7 @@ import RewardBrands from "./RewardBrands";
 import RewardCard from "./RewardCard";
 import { feedRewardsFetch } from '../../actions'
 import { feedOffersFetch } from '../../actions'
+import { rewardSearchData, rewardsAvailableData } from "../../data/RewardsRewards";
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -45,7 +46,7 @@ class RewardsScreen extends Component {
 					<Text style={styles.text}>
 						SEARCH BY BRAND
 					</Text>
-					<RewardBrands/>
+					<RewardBrands searchReward={rewardSearchData}/>
 				</View>
 				<View >
 					<Text style={styles.text}>
@@ -54,7 +55,7 @@ class RewardsScreen extends Component {
 					<FlatList
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
-						data={this.props.feedOffers}
+						data={rewardsAvailableData}
 						renderItem={({item}) => <RewardCard feedCard={item} onNavigate={this.props.navigation} />}
 						keyExtractor={item => item.company}
 						showsVerticalScrollIndicator={false}

@@ -18,9 +18,9 @@ class OffersCircleCard extends Component {
 		const { company, progress, feedOfferLogo } = this.props.offersCard;
 		const feedOfferLogoImages = {
 			uniqlo: require('../../images/uniqlo-activated-logo.png'),
-			adidas: require('../../images/adidas-logo.jpg'),
+			adidas: require('../../images/adidas-logo.png'),
 			dintaifung: require('../../images/dintaifung-logo.png'),
-			uber: require('../../images/uber-logo.jpg'),
+			uber: require('../../images/uber-logo.png'),
 			ikea: require('../../images/ikea-logo.png')
 
 		};

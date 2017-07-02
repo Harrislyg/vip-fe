@@ -12,10 +12,13 @@ class DetailDescription extends Component {
 			hnm: require('../../images/hnm-logo.png'),
 			watsons: require('../../images/watsons-logo.png')
 		};
+
+		const { company, description } = this.prop.data;
+
 		return (
 			<View>
-				<Text style={{ fontSize: 18, fontWeight: 'bold', color: "#8F8E94", paddingLeft: SCREEN_WIDTH/18 , paddingTop: SCREEN_WIDTH/18 }}>H&M </Text>
-				<Text style={{ fontSize: 14, color: "#8F8E94", lineHeight: 20, paddingTop: 5, paddingBottom: 12, paddingRight: SCREEN_WIDTH/18, paddingLeft: SCREEN_WIDTH/18, }}>H&M ss is  your shopping destination for fashion online. We offer fashion and quality at the best price in a more sustainable way. </Text>
+				<Text style={{ fontSize: 18, fontWeight: 'bold', color: "#8F8E94", paddingLeft: SCREEN_WIDTH/18 , paddingTop: SCREEN_WIDTH/18 }}>{company} </Text>
+				<Text style={{ fontSize: 14, color: "#8F8E94", lineHeight: 20, paddingTop: 5, paddingBottom: 12, paddingRight: SCREEN_WIDTH/18, paddingLeft: SCREEN_WIDTH/18, }}>{description}</Text>
 
 				{ (this.props.type === "offer") && (
 					<Button

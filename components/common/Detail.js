@@ -6,6 +6,7 @@ import DetailDetail from "./DetailDetail";
 import DetailHeader from "./DetailHeader";
 import OfferProgress from "./OfferProgress";
 import RewardProgress from "./RewardProgress";
+import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
 
 class Detail extends Component {
 	async componentDidMount() {
@@ -18,11 +19,13 @@ class Detail extends Component {
     fontLoaded: false
 	};
 	render () {
-		console.log(this.props);
-		const { company, points, feedOfferLogo } = this.props.data;
+		// console.log(this.props);
+		// const { company, points, value, feedRewardLogo, description, feedRewardBg } = this.props.data;
+		// const { company, points, feedOfferLogo } = this.props.data;
+
 		return (
 			<View style={styles.main}>
-				<DetailHeader type={this.props.type} image={feedOfferLogo} navigation={this.props.navigation}/>
+				<DetailHeader type={this.props.type} image={ this.props.type === "reward" ? rewardCardImages[this.props.data.feedRewardBg] : this.props.data.feedOfferBg } navigation={this.props.navigation}/>
 					{this.props.type === "reward" ? (
 						<RewardProgress />
 					) : (

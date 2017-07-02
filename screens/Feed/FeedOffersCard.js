@@ -22,18 +22,18 @@ class FeedOffersCard extends Component {
 		// console.log('Row', this.props.onNavigate);
 		const { company, feedOfferLogo, feedOfferBg, pointsOne, pointsTwo } = this.props.feedCard;
 		const feedOfferLogoImages = {
-			hnmBg: require('../../images/hnm-bg.jpg'),
-			watsonsBg: require('../../images/watsons-bg.jpg'),
-			uniqloBg: require('../../images/uniqlo-bg.jpg'),
+			hnmBg: require('../../images/hnm-bg.png'),
+			watsonsBg: require('../../images/watsons-bg.png'),
+			uniqloBg: require('../../images/uniqlo-bg.png'),
 			grabBg: require('../../images/grab-bg.png'),
-			starbucksBg: require('../../images/starbucks-bg.jpg'),
-			expediaBg: require('../../images/expedia-bg.jpg'),
+			starbucksBg: require('../../images/starbucks-bg.png'),
+			expediaBg: require('../../images/expedia-bg.png'),
 			grouponBg: require('../../images/groupon-bg.png'),
 			glintsBg: require('../../images/glints-bg.png'),
-			ezBg: require('../../images/ez-bg.jpg'),
-			zaloraBg: require('../../images/zalora-bg.jpg'),
-			deliverooBg: require('../../images/deliveroo-bg.jpg'),
-			underarmourBg: require('../../images/underarmour-bg.jpg'),
+			ezBg: require('../../images/ez-bg.png'),
+			zaloraBg: require('../../images/zalora-bg.png'),
+			deliverooBg: require('../../images/deliveroo-bg.png'),
+			underarmourBg: require('../../images/underarmour-bg.png'),
 			redmartBg: require('../../images/redmart-bg.png'),
 			bolt: require('../../images/bolt-icon.png'),
 			piggy: require('../../images/piggy-icon.png')

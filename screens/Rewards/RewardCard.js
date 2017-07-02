@@ -5,6 +5,7 @@ import { offersActivatedFetch } from '../../actions';
 import RewardProgress from "../../components/common/RewardProgress";
 import DetailHeader from "../../components/common/DetailHeader";
 import { Bar } from 'react-native-progress';
+import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -19,25 +20,29 @@ class RewardBrands extends Component {
 	}
 
 	render () {
-		// const ll = require('../../images/starbucks-bg.jpg');
+		// const ll = require('../../images/starbucks-bg.png');
 		// const check = require('../../images/hnm-logo.png');
 
-		const { company, points, feedOfferLogo } = this.props.feedCard;
-		console.log("Data rec", this.props.feedCard);
-		const feedRewardLogoImages = {
-			foodpanda: require('../../images/foodpanda-logo.png'),
-			gv: require('../../images/gv-logo.jpg'),
-			forever: require('../../images/forever21-logo.jpg'),
-			starbucks: require('../../images/starbucks-logo.png'),
-			beats: require('../../images/beats-logo.png'),
-			nike: require('../../images/nike-logo.jpg'),
-			gap: require('../../images/gap-logo.png'),
-			nikon: require('../../images/nikon-logo.png'),
-			apple: require('../../images/apple-logo.jpg'),
-			groupon: require('../../images/groupon-logo.png'),
-			sephora: require('../../images/sephora-logo.jpg'),
-			zara: require('../../images/zara-logo.jpg')
-		};
+		const { company, points, value, feedRewardLogo, description, feedRewardBg } = this.props.feedCard;
+		// console.log("Data rec", this.props.feedCard);
+
+
+		// const feedRewardLogoImages = {
+		// 	foodpanda: require('../../images/foodpanda-logo.png'),
+		// 	gv: require('../../images/gv-logo.png'),
+		// 	forever: require('../../images/forever21-logo.png'),
+		// 	starbucks: require('../../images/starbucks-logo.png'),
+		// 	beats: require('../../images/beats-logo.png'),
+		// 	nike: require('../../images/nike-logo.png'),
+		// 	gap: require('../../images/gap-logo.png'),
+		// 	nikon: require('../../images/nikon-logo.png'),
+		// 	apple: require('../../images/apple-logo.png'),
+		// 	groupon: require('../../images/groupon-logo.png'),
+		// 	sephora: require('../../images/sephora-logo.png'),
+		// 	zara: require('../../images/zara-logo.png')
+		// };
+
+
 		return (
 			<TouchableOpacity
 					onPress={this.onNavigate.bind(this)}
@@ -45,26 +50,26 @@ class RewardBrands extends Component {
 				>
 				<Image
 					style={styles.logoStyle}
-					source={feedRewardLogoImages[feedOfferLogo]}
+					source={rewardCardImages[feedRewardBg]}
 					// resizeMode="contain"
 				/>
 				<View style={styles.main}>
 				<View style={styles.row}>
-					<Image style={styles.check} source={feedRewardLogoImages[feedOfferLogo]}/>
-					<Text style={styles.title}>$50 Gift Card </Text>
+					<Image style={styles.check} source={rewardScrollImages[feedRewardLogo]}/>
+					<Text style={styles.title}>$ {value} Gift Card </Text>
 				</View>
 				<View style={styles.lower}>
-					<Text style={styles.text}>Worth <Text style={{fontWeight: "bold"}}> 5,000 </Text> points </Text>
+					<Text style={styles.text}>Worth <Text style={{fontWeight: "bold"}}> { points }</Text> points </Text>
 					<Bar
 						height={8}
 						borderWidth={0}
-						progress={0.3}
+						progress={ 7535 / points  }
 						width={200}
 						color={"rgba(50, 234, 214, 1)"}
 						unfilledColor={"rgba(226, 226, 226, 1)"}
 						width={SCREEN_WIDTH - (SCREEN_WIDTH/9) - 24}
 					/>
-					<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>24%</Text> of 5,000 points</Text>
+					<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>{(753500 / points).toFixed(0)}%</Text> of {points} points</Text>
 				</View>
 				</View>
 			</TouchableOpacity>

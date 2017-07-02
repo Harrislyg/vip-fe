@@ -22,5 +22,4 @@ export const rewardsAvailableData = [
 	{ company: 'Uber', value: '10', points: '15000', description: 'Uber Technologies Inc. is an American technology company headquartered in San Francisco, California, United States, operating in 570 cities worldwide. It develops, markets and operates the Uber car transportation and food delivery mobile apps.', feedRewardLogo: 'uber', feedRewardBg: 'uberBg' },
 	{ company: 'Expedia', value: '10', points: '15000', description: 'Expedia.com is a travel website owned by Expedia Inc. The website can be used to book airline tickets, hotel reservations, car rentals, cruises, vacation packages and various attractions and services via the internet or telephone agents.', feedRewardLogo: 'expedia', feedRewardBg: 'expediaBg' },
 	{ company: 'Underarmour', value: '10', points: '20000', description: 'Under Armour, Inc. is an American company that manufactures footwear, sports and casual apparel.[3] Under Armour began offering footwear in 2006.', feedRewardLogo: 'underarmour', feedRewardBg: 'underarmourBg' }
-
 ];

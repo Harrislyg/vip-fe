@@ -14,17 +14,17 @@ class FeedCard extends Component {
 		const { company, points, feedRewardLogo } = this.props.feedCard;
 		const feedRewardLogoImages = {
 			foodpanda: require('../../images/foodpanda-logo.png'),
-			gv: require('../../images/gv-logo.jpg'),
-			forever21: require('../../images/forever21-logo.jpg'),
+			gv: require('../../images/gv-logo.png'),
+			forever21: require('../../images/forever21-logo.png'),
 			starbucks: require('../../images/starbucks-logo.png'),
 			beats: require('../../images/beats-logo.png'),
-			nike: require('../../images/nike-logo.jpg'),
+			nike: require('../../images/nike-logo.png'),
 			gap: require('../../images/gap-logo.png'),
 			nikon: require('../../images/nikon-logo.png'),
-			apple: require('../../images/apple-logo.jpg'),
+			apple: require('../../images/apple-logo.png'),
 			groupon: require('../../images/groupon-logo.png'),
-			sephora: require('../../images/sephora-logo.jpg'),
-			zara: require('../../images/zara-logo.jpg')
+			sephora: require('../../images/sephora-logo.png'),
+			zara: require('../../images/zara-logo.png')
 		};
 		return (
 			<View style={styles.viewStyle}>

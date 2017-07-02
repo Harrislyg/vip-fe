@@ -16,8 +16,8 @@ class RewardBrands extends Component {
 				contentContainerStyle={styles.feedOffersCardStyle}
 				horizontal
 				enableEmptySections
-				data={this.props.offersActivated}
-				renderItem={({item}) => <RewardSquareCard offersCard={item} />}
+				data={this.props.searchReward}
+				renderItem={({item}) => <RewardSquareCard rewardCard={item} />}
 				keyExtractor={item => item.company}
 				showsHorizontalScrollIndicator={false}
 				alwaysBounceHorizontal

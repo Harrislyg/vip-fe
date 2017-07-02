@@ -15,7 +15,7 @@ class RewardDetail extends Component {
 	});
 
 	render () {
-		// console.log("pararms: ", this.props.navigation.state.params);
+		console.log("pararms: ", this.props.navigation.state.params.data);
 		return (
 			<ScrollView>
 				<Detail type="reward" navigation={this.props.navigation} data={this.props.navigation.state.params.data} action />

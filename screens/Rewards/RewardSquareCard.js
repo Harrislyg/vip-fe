@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Dimensions, Image, View } from 'react-native';
 import { Card } from 'react-native-elements';
+import { rewardScrollImages } from "../../images/allImages"
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -11,15 +12,16 @@ class RewardSquareCard extends Component {
 	// }
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company, points, feedOfferLogo } = this.props.offersCard;
-		const feedOfferLogoImages = {
-			uniqlo: require('../../images/uniqlo-activated-logo.png'),
-			adidas: require('../../images/adidas-logo.jpg'),
-			dintaifung: require('../../images/dintaifung-logo.png'),
-			uber: require('../../images/uber-logo.png'),
-			ikea: require('../../images/ikea-logo.png')
+		const { company, points, feedRewardLogo } = this.props.rewardCard;
+		// const feedOfferLogoImages = {
+		// 	uniqlo: require('../../images/uniqlo-activated-logo.png'),
+		// 	adidas: require('../../images/adidas-logo.png'),
+		// 	dintaifung: require('../../images/dintaifung-logo.png'),
+		// 	uber: require('../../images/uber-logo.png'),
+		// 	nike: require('../../images/nike-logo.png')
+		// };
+		const aa = `../../images/${feedRewardLogo}-logo.png`;
 
-		};
 		return (
 			<View style={styles.viewStyle}>
 				<Card
@@ -28,7 +30,7 @@ class RewardSquareCard extends Component {
 				>
 					<Image
 						style={styles.imageStyle}
-						source={feedOfferLogoImages[feedOfferLogo]}
+						source={rewardScrollImages[feedRewardLogo]}
 						resizeMode="cover"
 						key={company}
 					/>

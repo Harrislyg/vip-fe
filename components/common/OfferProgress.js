@@ -7,7 +7,7 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class OfferProgress extends Component {
 	render () {
-		const ll = require('../../images/starbucks-bg.jpg');
+		const ll = require('../../images/starbucks-bg.png');
 		const check = require('../../images/Check.png');
 		return (
 			<View style={styles.main}>

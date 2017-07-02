@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Dimensions, Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -7,18 +8,15 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 class DetailHeader extends Component {
 	render () {
 
-		const ll = require('../../images/starbucks-bg.jpg');
-		console.log(this.props.navigation);
+
 		return (
 			<Image
 				style={styles.logoStyle}
-				source={ll}
-				// resizeMode="contain"
+				source={this.props.image}
 			>
 				<TouchableOpacity style={styles.backCaret} onPress={() => this.props.navigation.goBack()}>
 					<Image source={require("../../images/Chevron.png")}/>
 				</TouchableOpacity>
-				<Text style={styles.text}> H&M </Text>
 			</Image>
 		);
 	}
@@ -37,8 +35,8 @@ const styles = {
 		position: "absolute",
 		left: 20,
 		top: 20,
-		// height: 15,
-		// width: 15,
+		height: 15,
+		width: 15,
 	},
 	text: {
 		backgroundColor: "transparent",
