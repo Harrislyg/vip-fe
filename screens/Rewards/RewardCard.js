@@ -5,6 +5,7 @@ import { offersActivatedFetch } from '../../actions';
 import RewardProgress from "../../components/common/RewardProgress";
 import DetailHeader from "../../components/common/DetailHeader";
 import { Bar } from 'react-native-progress';
+import { Card } from 'react-native-elements';
 import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -48,6 +49,16 @@ class RewardBrands extends Component {
 					onPress={this.onNavigate.bind(this)}
 					activeOpacity={1}
 				>
+				<Card containerStyle={{
+					shadowColor: '#000',
+					shadowOffset: {
+						width: -0.2,
+						height: 0
+					},
+					shadowRadius: 5,
+					shadowOpacity: 0.3,
+					padding: 0,borderRadius: 6, alignSelf: 'center', width: SCREEN_WIDTH - (SCREEN_WIDTH/9),
+				}}>
 				<Image
 					style={styles.logoStyle}
 					source={rewardCardImages[feedRewardBg]}
@@ -72,6 +83,7 @@ class RewardBrands extends Component {
 					<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>{(753500 / points).toFixed(0)}%</Text> of {points} points</Text>
 				</View>
 				</View>
+				</Card>
 			</TouchableOpacity>
 		);
 	}
@@ -84,8 +96,8 @@ const styles = {
 		display: "flex",
 		height: SCREEN_HEIGHT/5,
 		width: SCREEN_WIDTH - (SCREEN_WIDTH/9),
-		marginLeft: SCREEN_WIDTH/18,
-		marginRight: SCREEN_WIDTH/18,
+		// marginLeft: SCREEN_WIDTH/18,
+		// marginRight: SCREEN_WIDTH/18,
 		justifyContent: 'center',
     	alignItems: 'center',
     	opacity: 0.8,
@@ -115,9 +127,9 @@ const styles = {
 		paddingLeft: 12,
 	},
 	main: {
-		marginLeft: SCREEN_WIDTH/18,
-		marginRight: SCREEN_WIDTH/18,
-		marginBottom: SCREEN_WIDTH/18,
+		// marginLeft: SCREEN_WIDTH/18,
+		// marginRight: SCREEN_WIDTH/18,
+		// marginBottom: SCREEN_WIDTH/18,
 		borderWidth: 2,
 		borderColor: "#F5F5F5",
 		borderRadius: 6,
