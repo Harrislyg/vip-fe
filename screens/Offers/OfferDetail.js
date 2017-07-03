@@ -16,8 +16,8 @@ class OfferDetail extends Component {
 
 	render () {
 		return (
-			<ScrollView>
-				<Detail type="offer" navigation={this.props.navigation} action/>
+			<ScrollView style={{backgroundColor: "#fff"}}>
+				<Detail type="offer" navigation={this.props.navigation} data={this.props.navigation.state.params.data} action/>
 			</ScrollView>
 		);
 	}

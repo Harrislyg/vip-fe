@@ -92,7 +92,7 @@ class OffersScreen extends Component {
 								BONUS OFFERS
 							</Text>
 							<View style={styles.lineStyle}></View>
-							<OffersOnetime></OffersOnetime>
+							<OffersOnetime onNavigate={this.props.navigation}></OffersOnetime>
 						</View>
 						<View style={styles.separatorStyle}></View>
 						<Text style={styles.textStyle}>

@@ -22,6 +22,8 @@ export const rewardScrollImages = {
 	ikea: require('./ikea-logo.png'),
 	carousell: require('./carousell-logo.png'),
 	citi: require('./citi-logo.png'),
+	bolt: require('./bolt-icon.png'),
+	piggy: require('./piggy-icon.png'),
 };
 
 export const rewardCardImages = {

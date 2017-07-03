@@ -16,8 +16,15 @@ class Detail extends Component {
 	    this.setState({ fontLoaded: true });
 	}
     state = {
-    fontLoaded: false
+    	fontLoaded: false,
+    	active: false,
 	};
+
+	handleClick() {
+		this.setState({
+			active: true,
+		});
+	}
 	render () {
 		// console.log(this.props);
 		// const { company, points, value, feedRewardLogo, description, feedRewardBg } = this.props.data;
@@ -25,13 +32,22 @@ class Detail extends Component {
 
 		return (
 			<View style={styles.main}>
-				<DetailHeader type={this.props.type} image={ this.props.type === "reward" ? rewardCardImages[this.props.data.feedRewardBg] : this.props.data.feedOfferBg } navigation={this.props.navigation}/>
+				<DetailHeader type={this.props.type} image={rewardCardImages[ this.props.type === "reward" ? this.props.data.feedRewardBg : this.props.data.feedOfferBg]} navigation={this.props.navigation}/>
 					{this.props.type === "reward" ? (
-						<RewardProgress />
+						<RewardProgress data={this.props.data}/>
 					) : (
-						<OfferProgress />
+						<OfferProgress data={this.props.data} active={this.state.active}/>
 					)}
-				<DetailDescription type={this.props.type} desc={this.props.data.description} action/>
+				<DetailDescription
+					data={this.props.data}
+					type={this.props.type}
+					company={this.props.data.company}
+					criteria={this.props.data.criteria}
+					description={this.props.data.description}
+					onClick={this.handleClick.bind(this)}
+					active={this.state.active}
+					action
+				/>
 				<DetailDetail type={this.props.type}/>
 			</View>
 		);

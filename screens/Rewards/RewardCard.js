@@ -56,7 +56,7 @@ class RewardBrands extends Component {
 				<View style={styles.main}>
 				<View style={styles.row}>
 					<Image style={styles.check} source={rewardScrollImages[feedRewardLogo]}/>
-					<Text style={styles.title}>$ {value} Gift Card </Text>
+					<Text style={styles.title}>${value} Gift Card </Text>
 				</View>
 				<View style={styles.lower}>
 					<Text style={styles.text}>Worth <Text style={{fontWeight: "bold"}}> { points }</Text> points </Text>

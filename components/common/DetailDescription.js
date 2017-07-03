@@ -13,21 +13,22 @@ class DetailDescription extends Component {
 			watsons: require('../../images/watsons-logo.png')
 		};
 
-		const { company, description } = this.prop.data;
+		const { company } = this.props;
 
 		return (
 			<View>
 				<Text style={{ fontSize: 18, fontWeight: 'bold', color: "#8F8E94", paddingLeft: SCREEN_WIDTH/18 , paddingTop: SCREEN_WIDTH/18 }}>{company} </Text>
-				<Text style={{ fontSize: 14, color: "#8F8E94", lineHeight: 20, paddingTop: 5, paddingBottom: 12, paddingRight: SCREEN_WIDTH/18, paddingLeft: SCREEN_WIDTH/18, }}>{description}</Text>
-
+				<Text style={{ fontSize: 14, color: "#8F8E94", lineHeight: 20, paddingTop: 5, paddingBottom: 12, paddingRight: SCREEN_WIDTH/18, paddingLeft: SCREEN_WIDTH/18, }}>
+					{ (this.props.type === "offer") ? ( this.props.criteria) : (this.props.description)}
+				</Text>
 				{ (this.props.type === "offer") && (
 					<Button
-					  onPress={ () => {console.log("sdf")}}
-					  icon={{name: 'attachment', size: 30, color: '#31EAD7'}}
-					  buttonStyle={{ paddingLeft: SCREEN_WIDTH/18, width: (SCREEN_WIDTH - (SCREEN_WIDTH/9)), backgroundColor: 'white', borderRadius: 10, borderColor: "#31EAD7", borderWidth: 1, height: SCREEN_HEIGHT/20, marginTop: 5, marginBottom: 5 }}
+					  onPress={this.props.onClick}
+					  // icon={{name: 'attachment', size: 30, color: '#31EAD7'}}
+					  buttonStyle={this.props.active ? styles.active : styles.inactive}
 					  textStyle={{ textAlign: 'center' }}
-					  title="View Website"
-					  color="#31EAD7"
+					  title={this.props.active ? "Activated" : "Activate"}
+					  color={this.props.active ? "#ffffff" : "#31EAD7"}
 					/>
 				)}
 			</View>
@@ -36,6 +37,28 @@ class DetailDescription extends Component {
 }
 
 const styles = {
+	inactive: {
+		paddingLeft: SCREEN_WIDTH/18,
+		width: (SCREEN_WIDTH - (SCREEN_WIDTH/9)),
+		backgroundColor: 'white',
+		borderRadius: 10,
+		borderColor: "#31EAD7",
+		borderWidth: 1,
+		height: SCREEN_HEIGHT/20,
+		marginTop: 5,
+		marginBottom: 5
+	},
+	active: {
+		paddingLeft: SCREEN_WIDTH/18,
+		width: (SCREEN_WIDTH - (SCREEN_WIDTH/9)),
+		backgroundColor: "#31EAD7",
+		borderRadius: 10,
+		// borderColor: "#31EAD7",
+		// borderWidth: 1,
+		height: SCREEN_HEIGHT/20,
+		marginTop: 5,
+		marginBottom: 5
+	},
 	logoStyle: {
 		alignSelf: 'center',
 		height: 50,

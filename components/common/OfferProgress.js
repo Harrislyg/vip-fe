@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import { Image, Dimensions, Text, View } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class OfferProgress extends Component {
+	renderIcon() {
+		if (this.props.data.pointsTwo === '$1') {
+				return <Text ><Text style={{fontWeight: "bold"}}> {this.props.data.pointsOne}</Text><Text> per </Text><Text style={{fontWeight: "bold"}}>{this.props.data.pointsTwo}</Text><Text> spent</Text></Text>;
+			}
+		return <Text style={styles.desc}><Text style={{fontWeight: "bold"}}> {this.props.data.pointsOne}</Text><Text> {this.props.data.pointsTwo}</Text></Text>;
+	}
+
 	render () {
 		const ll = require('../../images/starbucks-bg.png');
 		const check = require('../../images/Check.png');
+
+		const { company, pointsOne, pointsTwo, criteria, feedOfferBg, feedOfferLogo } = this.props.data;
+		const {active} = this.props;
+
 		return (
 			<View style={styles.main}>
 				<Text style={styles.title}>BONUS OFFER</Text>
@@ -16,26 +28,25 @@ class OfferProgress extends Component {
 					<AnimatedCircularProgress
 					  size={54}
 					  width={6}
-					  fill={50}
+					  fill={0}
 					  rotation={-360}
 					  tintColor="#31EAD7"
 					  backgroundColor="#ffffff"
 					  style={styles.container}
 					>
 					{(fill) => (
-						<Image style={styles.imageStyle} source={ll}/>
+						<Image style={styles.imageStyle} source={rewardScrollImages[feedOfferLogo]}/>
 					)}
 					</AnimatedCircularProgress>
 					<View style={styles.card}>
-						<Text style={styles.desc}>
-							Earn 500 points at one-time $100 purchase. sd asd sd as
-						</Text>
-						<View style={styles.row}>
+						{this.renderIcon()}
+						{ active && (
+							<View style={styles.row}>
 							<Image style={styles.check} source={check}/>
-							{ active &&
-								<Text style={styles.status}>Offer active | 50% completed</Text>
-							}
-						</View>
+							<Text style={styles.status}>Offer active | 0% completed</Text>
+							</View>
+							)
+						}
 					</View>
 				</View>
 			</View>
@@ -50,9 +61,9 @@ const styles = {
 		paddingRight: 15,
 	},
 	desc:{
-		color: "#8F8E94",
+		// color: "#8F8E94",
 		fontSize: 14,
-		fontWeight: "bold",
+		// fontWeight: "bold",
 		lineHeight: 20,
 		paddingBottom: 5,
 	},

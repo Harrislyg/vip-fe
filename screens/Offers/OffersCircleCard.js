@@ -10,9 +10,9 @@ class OffersCircleCard extends Component {
 	// onNavigate () {
 	// 	this.props.onNavigate.navigate('feedDetail');
 	// }
-	onNavigate () {
-		this.props.onNavigate.navigate('offerDetail');
-	}
+	// onNavigate () {
+	// 	this.props.onNavigate.navigate('offerDetail');
+	// }
 	render () {
 		// console.log('Row', this.props.onNavigate);
 		const { company, progress, feedOfferLogo } = this.props.offersCard;
@@ -24,11 +24,8 @@ class OffersCircleCard extends Component {
 			ikea: require('../../images/ikea-logo.png')
 
 		};
+
 		return (
-			<TouchableOpacity
-					onPress={this.onNavigate.bind(this)}
-					activeOpacity={1}
-				>
 			<View style={styles.viewStyle}>
 						<Card
 							containerStyle={styles.cardStyle}
@@ -52,7 +49,6 @@ class OffersCircleCard extends Component {
 					>
 				</AnimatedCircularProgress>
 			</View>
-			</TouchableOpacity>
 		);
 	}
 }
