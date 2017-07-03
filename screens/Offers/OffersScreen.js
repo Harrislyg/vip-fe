@@ -6,6 +6,7 @@ import { Button, Icon, List, ListItem, SearchBar } from 'react-native-elements';
 import { offersPerpetualFetch } from '../../actions';
 import OffersOnetime from './OffersOnetime';
 import OffersActivated from './OffersActivated';
+import FeedTopHeader from '../Feed/FeedTopHeader'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -71,11 +72,12 @@ class OffersScreen extends Component {
 			<ScrollView style={styles.scrollView}>
 				{ this.state.fontLoaded ? (
 					<View>
-						<View style={styles.viewStyle}>
+						<FeedTopHeader />
+						{/* <View style={styles.viewStyle}>
 							<View style={styles.pointViewStyle}>
 								<Text style={styles.pointStyle}>7535</Text>
 							</View>
-						</View>
+						</View> */}
 						<View style={styles.separatorStyle}></View>
 						<View style={styles.offersActivatedStyle}>
 							<Text style={styles.textStyle}>

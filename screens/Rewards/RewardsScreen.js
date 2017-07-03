@@ -10,6 +10,7 @@ import { feedRewardsFetch } from '../../actions'
 import { feedOffersFetch } from '../../actions'
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class RewardsScreen extends Component {
 	static navigationOptions = {
@@ -34,6 +35,12 @@ class RewardsScreen extends Component {
 
 		return (
 			<ScrollView style={styles.scrollView}>
+				<View style={styles.viewStyle}>
+					<View style={styles.pointViewStyle}>
+						<Text style={styles.pointStyle}>7535</Text>
+					</View>
+				</View>
+				<View style={styles.separatorStyle}></View>
 				<View >
 					<Text style={styles.text}>
 						SEARCH BY BRAND
@@ -64,6 +71,7 @@ const styles = {
 		borderTopWidth: 0,
 		borderBottomWidth: 0
 	},
+
 	text:{
 		marginLeft: SCREEN_WIDTH/18,
 		color: "#8F8E94",
@@ -71,7 +79,37 @@ const styles = {
 		fontWeight: "bold",
 		paddingTop: 6,
 		paddingBottom: 6,
-	}
+	},
+
+	viewStyle: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginTop: 10,
+		marginBottom: 10
+	},
+
+	pointViewStyle: {
+		justifyContent: 'center',
+		width: SCREEN_WIDTH / 7,
+		height: SCREEN_HEIGHT / 27,
+		borderRadius: 2,
+		backgroundColor: '#31EAD7',
+		padding: 0
+	},
+
+	pointStyle: {
+		fontFamily: 'ABeeZee',
+		color: '#fff',
+		fontSize: 20,
+		fontWeight: '900',
+		alignSelf: 'center',
+		margin: 0
+	},
+	
+	separatorStyle: {
+		height: SCREEN_HEIGHT / 50,
+		backgroundColor: '#F4F4F4'
+	},
 }
 
 const mapStateToProps = ({feed}) => {
