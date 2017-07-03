@@ -9,9 +9,9 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 class OfferProgress extends Component {
 	renderIcon() {
 		if (this.props.data.pointsTwo === '$1') {
-				return <Text ><Text style={{fontWeight: "bold"}}> {this.props.data.pointsOne}</Text><Text> per </Text><Text style={{fontWeight: "bold"}}>{this.props.data.pointsTwo}</Text><Text> spent</Text></Text>;
+				return <Text ><Text style={{fontWeight: "bold", color: '#8F8E94'}}> {this.props.data.pointsOne}</Text><Text> per </Text><Text style={{fontWeight: "bold", color: '#8F8E94'}}>{this.props.data.pointsTwo}</Text><Text> spent</Text></Text>;
 			}
-		return <Text style={styles.desc}><Text style={{fontWeight: "bold"}}> {this.props.data.pointsOne}</Text><Text> {this.props.data.pointsTwo}</Text></Text>;
+		return <Text style={styles.desc}><Text style={{fontWeight: "bold", color: '#8F8E94'}}> {this.props.data.pointsOne}</Text><Text style={{color: '#8F8E94'}}> {this.props.data.pointsTwo}</Text></Text>;
 	}
 
 	render () {

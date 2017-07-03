@@ -45,65 +45,66 @@ class RewardBrands extends Component {
 
 
 		return (
-			<TouchableOpacity
-					onPress={this.onNavigate.bind(this)}
-					activeOpacity={1}
-				>
-				<Card containerStyle={{
-					shadowColor: '#000',
-					shadowOffset: {
-						width: -0.2,
-						height: 0
-					},
-					shadowRadius: 5,
-					shadowOpacity: 0.3,
-					padding: 0,borderRadius: 6, alignSelf: 'center', width: SCREEN_WIDTH - (SCREEN_WIDTH/9),
-				}}>
-				<Image
-					style={styles.logoStyle}
-					source={rewardCardImages[feedRewardBg]}
-					// resizeMode="contain"
-				/>
-				<View style={styles.main}>
-				<View style={styles.row}>
-					<Image style={styles.check} source={rewardScrollImages[feedRewardLogo]}/>
-					<Text style={styles.title}>${value} Gift Card </Text>
-				</View>
-				<View style={styles.lower}>
-					<Text style={styles.text}>Worth <Text style={{fontWeight: "bold"}}> { points }</Text> points </Text>
-					<Bar
-						height={8}
-						borderWidth={0}
-						progress={ 7535 / points  }
-						width={200}
-						color={"rgba(50, 234, 214, 1)"}
-						unfilledColor={"rgba(226, 226, 226, 1)"}
-						width={SCREEN_WIDTH - (SCREEN_WIDTH/9) - 24}
-					/>
-					<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>{(753500 / points).toFixed(0)}%</Text> of {points} points</Text>
-				</View>
-				</View>
+				<Card containerStyle={styles.containerStyle}>
+					<TouchableOpacity
+						onPress={this.onNavigate.bind(this)}
+						activeOpacity={1}
+						>
+						<Image
+							style={styles.logoStyle}
+							source={rewardCardImages[feedRewardBg]}
+							resizeMode="cover"
+						/>
+						<View style={styles.row}>
+							<Image style={styles.check} source={rewardScrollImages[feedRewardLogo]}/>
+							<Text style={styles.title}>${value} Gift Card </Text>
+						</View>
+						<View style={styles.lower}>
+							<Text style={styles.text}>Worth <Text style={{fontWeight: "bold"}}> {points}</Text> points </Text>
+							<Bar
+								height={8}
+								borderWidth={0}
+								progress={7535 / points}
+								width={200}
+								color={"rgba(50, 234, 214, 1)"}
+								unfilledColor={"rgba(226, 226, 226, 1)"}
+								width={SCREEN_WIDTH - (SCREEN_WIDTH/9) - 24}
+							/>
+							<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>{(753500 / points).toFixed(0)}%</Text> of {points} points</Text>
+						</View>
+					</TouchableOpacity>
 				</Card>
-			</TouchableOpacity>
 		);
 	}
 
 }
 
 const styles = {
-	logoStyle: {
-		// flex: 1,
-		display: "flex",
-		height: SCREEN_HEIGHT/5,
-		width: SCREEN_WIDTH - (SCREEN_WIDTH/9),
-		// marginLeft: SCREEN_WIDTH/18,
-		// marginRight: SCREEN_WIDTH/18,
-		justifyContent: 'center',
-    	alignItems: 'center',
-    	opacity: 0.8,
+	containerStyle: {
+		shadowColor: '#000',
+		shadowOffset: {
+			width: -0.2,
+			height: 0
+		},
+		shadowRadius: 5,
+		shadowOpacity: 0.3,
+		padding: 0,
+		borderRadius: 3,
+		alignSelf: 'center',
+		width: SCREEN_WIDTH / 1.1,
+		marginBottom: 10
 	},
+
+	logoStyle: {
+		height: SCREEN_HEIGHT / 5,
+		width: SCREEN_WIDTH / 1.1,
+		padding: 0,
+		borderRadius: 3,
+		alignSelf: 'center'
+	},
+
 	text1: {
-		backgroundColor: "transparent",
+		backgroundColor: 'transparent',
 		fontWeight: "bold",
 		fontSize: 24,
 		color: "#ffffff"

@@ -9,12 +9,12 @@ export const offersPerpetualData = [
 ];
 
 export const offersOnetimeData = [
-	{ company: 'Carousell', pointsOne: 'Earn 10500 pts', pointsTwo: 'for app download', criteria: 'When you download the Crousell app', feedOfferLogo: 'carousell', feedOfferBg: 'glintsBg' },
+	{ company: 'Carousell', pointsOne: 'Earn 10500 pts', pointsTwo: 'for app download', criteria: 'When you download the Crousell app', feedOfferLogo: 'carousell', feedOfferBg: 'carousellBg' },
 	// { company: 'EZ Buy', pointsOne: 'Earn 9000 pts', pointsTwo: 'for app download', feedOfferLogo: 'ez', feedOfferBg: 'ezBg' },
-	{ company: 'Citi Thank You Card', pointsOne: 'Earn 20000 pts', pointsTwo: 'for signup', criteria: 'When you get the Citi Thank You card', feedOfferLogo: 'citi', feedOfferBg: 'ezBg' },
+	{ company: 'Citi Thank You Card', pointsOne: 'Earn 20000 pts', pointsTwo: 'for signup', criteria: 'When you get the Citi Thank You card', feedOfferLogo: 'citi', feedOfferBg: 'citiBg' },
 	{ company: 'Uniqlo', pointsOne: '85 pts', pointsTwo: '$1', criteria: 'When you spend at least $30', feedOfferLogo: 'uniqlo', feedOfferBg: 'uniqloBg' },
 	{ company: 'Expedia', pointsOne: '70 pts', pointsTwo: '$1', criteria: 'When you spend at least $150', feedOfferLogo: 'expedia', feedOfferBg: 'expediaBg' },
-	{ company: 'Underarmour', pointsOne: '90 pts', pointsTwo: '$1', criteria: 'When you spend at least $20', feedOfferLogo: 'underarmour', feedOfferBg: 'deliverooBg' }
+	{ company: 'Underarmour', pointsOne: '90 pts', pointsTwo: '$1', criteria: 'When you spend at least $20', feedOfferLogo: 'underarmour', feedOfferBg: 'underarmourBg' }
 ];
 
 export const offersActivatedData = [

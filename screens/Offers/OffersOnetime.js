@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { FlatList, Dimensions, Text, Image, TouchableOpacity } from 'react-native';
 import { Card, ListItem } from 'react-native-elements';
 import { offersOnetimeFetch } from '../../actions';
-import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
+import { rewardScrollImages } from '../../images/allImages';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

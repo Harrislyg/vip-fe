@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
-import { Image, Dimensions, Text, View, TouchableOpacity, TouchableHighlight } from 'react-native';
-import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
+import { Image, Dimensions, TouchableOpacity } from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class DetailHeader extends Component {
 	render () {
-
-
 		return (
 			<Image
 				style={styles.logoStyle}
 				source={this.props.image}
 			>
 				<TouchableOpacity style={styles.backCaret} onPress={() => this.props.navigation.goBack()}>
-					<Image source={require("../../images/Chevron.png")}/>
+					<Image style={styles.caretStyle} source={require('../../images/Chevron.png')} />
 				</TouchableOpacity>
 			</Image>
 		);
@@ -25,25 +22,23 @@ class DetailHeader extends Component {
 const styles = {
 	logoStyle: {
 		flex: 1,
-		height: SCREEN_HEIGHT/3.6,
+		height: SCREEN_HEIGHT / 3.6,
 		width: SCREEN_WIDTH,
 		justifyContent: 'center',
-    	alignItems: 'center',
-    	opacity: 0.8,
+		alignItems: 'center'
 	},
 	backCaret: {
-		position: "absolute",
+		position: 'absolute',
 		left: 20,
 		top: 20,
 		height: 15,
+		width: 15
+	},
+	caretStyle: {
+		height: 15,
 		width: 15,
-	},
-	text: {
-		backgroundColor: "transparent",
-		fontWeight: "bold",
-		fontSize: 24,
-		color: "#ffffff"
-	},
+		marginTop: 10
+	}
 };
 
 export default DetailHeader;

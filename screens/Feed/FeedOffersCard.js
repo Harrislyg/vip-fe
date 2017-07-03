@@ -112,7 +112,7 @@ const styles = {
 		alignSelf: 'center',
 		width: SCREEN_WIDTH / 1.1,
 		height: SCREEN_HEIGHT / 7,
-		borderRadius: 2,
+		borderRadius: 3,
 		padding: 0,
 		margin: 0
 	},

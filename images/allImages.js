@@ -4,7 +4,7 @@ export const rewardScrollImages = {
 	sephora: require('./sephora-logo.png'),
 	gap: require('./gap-logo.png'),
 	nike: require('./nike-logo.png'),
-	forever: require('./forever21-logo.png'),
+	forever21: require('./forever21-logo.png'),
 	starbucks: require('./starbucks-logo.png'),
 	groupon: require('./groupon-logo.png'),
 	foodpanda: require('./foodpanda-logo.png'),
@@ -23,13 +23,14 @@ export const rewardScrollImages = {
 	carousell: require('./carousell-logo.png'),
 	citi: require('./citi-logo.png'),
 	bolt: require('./bolt-icon.png'),
-	piggy: require('./piggy-icon.png'),
+	piggy: require('./piggy-icon.png')
+
 };
 
 export const rewardCardImages = {
-	appleBg: require('./apple-bg.png'),
+	appleBg: require('./apple-bg.jpg'),
 	forever21Bg: require('./forever21-bg.png'),
-	zaraBg: require('./zara-bg.png'),
+	zaraBg: require('./zara-bg.jpeg'),
 	beatsBg: require('./beats-bg.png'),
 	adidasBg: require('./adidas-bg.png'),
 	uberBg: require('./uber-bg.png'),
@@ -43,4 +44,7 @@ export const rewardCardImages = {
 	ezBg: require('./ez-bg.png'),
 	uniqloBg: require('./uniqlo-bg.png'),
 	deliverooBg: require('./deliveroo-bg.png'),
+	carousellBg: require('./carousell-bg.png'),
+	citiBg: require('./citi-bg.jpg')
+
 };
