@@ -43,15 +43,18 @@ class RewardsScreen extends Component {
 				</View>
 				<View style={styles.separatorStyle}></View>
 				<View >
-					<Text style={styles.text}>
+					<Text style={styles.textStyle}>
 						SEARCH BY BRAND
 					</Text>
+					<View style={styles.lineStyle}></View>
 					<RewardBrands searchReward={rewardSearchData}/>
 				</View>
+				<View style={styles.separatorStyle}></View>
 				<View >
-					<Text style={styles.text}>
+					<Text style={styles.textStyle}>
 						AVAILABLE REWARDS
 					</Text>
+					<View style={styles.lineStyle}></View>
 					<FlatList
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
@@ -73,13 +76,11 @@ const styles = {
 		borderBottomWidth: 0
 	},
 
-	text:{
-		marginLeft: SCREEN_WIDTH/18,
-		color: "#8F8E94",
-		fontSize: 14,
-		fontWeight: "bold",
-		paddingTop: 6,
-		paddingBottom: 6,
+	textStyle: {
+		marginTop: 15,
+		marginLeft: 12,
+		color: '#8F8E94',
+		fontWeight: '600'
 	},
 
 	viewStyle: {
@@ -106,11 +107,17 @@ const styles = {
 		alignSelf: 'center',
 		margin: 0
 	},
-	
+
 	separatorStyle: {
 		height: SCREEN_HEIGHT / 50,
 		backgroundColor: '#F4F4F4'
 	},
+
+	lineStyle: {
+		height: 1.5,
+		backgroundColor: '#F4F4F4',
+		marginTop: 10
+	}
 }
 
 const mapStateToProps = ({feed}) => {
