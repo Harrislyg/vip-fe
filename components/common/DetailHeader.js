@@ -31,8 +31,8 @@ const styles = {
 		position: 'absolute',
 		left: 20,
 		top: 20,
-		height: 15,
-		width: 15
+		height: 50,
+		width: 50
 	},
 	caretStyle: {
 		height: 15,

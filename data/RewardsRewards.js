@@ -4,7 +4,7 @@ export const rewardSearchData = [
 	{ company: 'Sephora', points: '10000', feedRewardLogo: 'sephora' },
 	{ company: 'Apple', points: '15000', feedRewardLogo: 'apple' },
 	{ company: 'GV', points: '15000', feedRewardLogo: 'gv' },
-	{ company: 'Forever 21', points: '10000', feedRewardLogo: 'forever' },
+	{ company: 'Forever 21', points: '10000', feedRewardLogo: 'forever21' },
 	{ company: 'Starbucks', points: '10000', feedRewardLogo: 'starbucks' },
 	{ company: 'Groupon', points: '10000', feedRewardLogo: 'groupon' },
 	{ company: 'FoodPanda', points: '10000', feedRewardLogo: 'foodpanda' },
