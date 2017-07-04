@@ -9,7 +9,7 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 class OfferProgress extends Component {
 	renderIcon() {
 		if (this.props.data.pointsTwo === '$1') {
-				return <Text ><Text style={{fontWeight: "bold", color: '#8F8E94'}}> {this.props.data.pointsOne}</Text><Text> per </Text><Text style={{fontWeight: "bold", color: '#8F8E94'}}>{this.props.data.pointsTwo}</Text><Text> spent</Text></Text>;
+				return <Text ><Text style={{fontWeight: "bold", color: '#8F8E94'}}> {this.props.data.pointsOne}</Text></Text>;
 			}
 		return <Text style={styles.desc}><Text style={{fontWeight: "bold", color: '#8F8E94'}}> {this.props.data.pointsOne}</Text><Text style={{color: '#8F8E94'}}> {this.props.data.pointsTwo}</Text></Text>;
 	}
@@ -40,6 +40,7 @@ class OfferProgress extends Component {
 					</AnimatedCircularProgress>
 					<View style={styles.card}>
 						{this.renderIcon()}
+						<Text style={{color: '#8F8E94', lineHeight: 20, paddingBottom: 5}}> {criteria}</Text>
 						{ active && (
 							<View style={styles.row}>
 							<Image style={styles.check} source={check}/>
@@ -65,7 +66,7 @@ const styles = {
 		fontSize: 14,
 		// fontWeight: "bold",
 		lineHeight: 20,
-		paddingBottom: 5,
+		paddingBottom: 5
 	},
 	title: {
 		paddingTop: 5,
