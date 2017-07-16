@@ -6,7 +6,7 @@ import SmallCircleLogo from '../../components/common/SmallCircleLogo';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class FeedOffersCard extends Component {
+class HomeOffersCard extends Component {
 	onNavigate () {
 		this.props.onNavigate.navigate('feedDetail');
 	}
@@ -20,7 +20,7 @@ class FeedOffersCard extends Component {
 
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company, feedOfferLogo, feedOfferBg, pointsOne, pointsTwo } = this.props.feedCard;
+		const { company, feedOfferLogo, feedOfferBg, pointsOne, pointsTwo } = this.props.homeCard;
 		const feedOfferLogoImages = {
 			hnmBg: require('../../images/hnm-bg.png'),
 			watsonsBg: require('../../images/watsons-bg.png'),
@@ -124,4 +124,4 @@ const styles = {
 
 };
 
-export default FeedOffersCard;
+export default HomeOffersCard;

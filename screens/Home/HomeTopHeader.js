@@ -4,7 +4,7 @@ import { Text, Dimensions, View } from 'react-native';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class FeedTopHeader extends Component {
+class HomeTopHeader extends Component {
 	render () {
 		return (
 			<View style={styles.viewStyle}>
@@ -51,4 +51,4 @@ const styles = {
 	}
 };
 
-export default FeedTopHeader;
+export default HomeTopHeader;

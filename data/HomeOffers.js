@@ -1,4 +1,4 @@
-export const feedOffersData = [
+export const homeOffersData = [
 	{ company: 'Uniqlo', pointsOne: '100 pts', pointsTwo: '$1', feedOfferLogo: 'uniqlo', feedOfferBg: 'uniqloBg' },
 	{ company: 'Grab', pointsOne: '150 pts', pointsTwo: '$1', feedOfferLogo: 'grab', feedOfferBg: 'grabBg' },
 	{ company: 'Under Armour', pointsOne: '90 pts', pointsTwo: '$1', feedOfferLogo: 'underarmour', feedOfferBg: 'underarmourBg' },

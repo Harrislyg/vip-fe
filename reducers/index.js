@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import OffersReducer from './OffersReducer';
-import FeedReducer from './FeedReducer';
+import HomeReducer from './HomeReducer';
 
 export default combineReducers({
 	offers: OffersReducer,
-	feed: FeedReducer
+	home: HomeReducer
 });

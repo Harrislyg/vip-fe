@@ -6,8 +6,8 @@ import Detail from "../../components/common/Detail";
 import DetailHeader from "../../components/common/DetailHeader";
 import RewardBrands from "./RewardBrands";
 import RewardCard from "./RewardCard";
-import { feedRewardsFetch } from '../../actions'
-import { feedOffersFetch } from '../../actions'
+import { homeRewardsFetch } from '../../actions'
+import { homeOffersFetch } from '../../actions'
 import { rewardSearchData, rewardsAvailableData } from "../../data/RewardsRewards";
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -27,8 +27,8 @@ class RewardsScreen extends Component {
 	// const a = [1,2,3,4,5,6];
 
 	componentDidMount() {
-		this.props.feedRewardsFetch();
-		this.props.feedOffersFetch();
+		this.props.homeRewardsFetch();
+		this.props.homeOffersFetch();
 	}
 
 	render () {
@@ -120,11 +120,11 @@ const styles = {
 	}
 }
 
-const mapStateToProps = ({feed}) => {
-  const {feedRewards, feedOffers} = feed
-  return {feedRewards, feedOffers}
+const mapStateToProps = ({home}) => {
+  const {homeRewards, homeOffers} = home
+  return {homeRewards, homeOffers}
 
 }
 
-export default connect(mapStateToProps, {feedRewardsFetch, feedOffersFetch}) (RewardsScreen);
+export default connect(mapStateToProps, {homeRewardsFetch, homeOffersFetch}) (RewardsScreen);
 // export default RewardsScreen;

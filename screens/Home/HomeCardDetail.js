@@ -5,7 +5,7 @@ import { Button, Card } from 'react-native-elements';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class FeedCardDetail extends Component {
+class HomeCardDetail extends Component {
 	static navigationOptions = ({navigation}) => ({
 		tabBarVisible: false,
 		headerLeft: (<Button
@@ -45,4 +45,4 @@ const styles = {
 	}
 }
 
-export default FeedCardDetail;
+export default HomeCardDetail;

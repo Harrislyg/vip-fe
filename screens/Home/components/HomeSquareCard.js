@@ -5,26 +5,26 @@ import { Card } from 'react-native-elements';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-class FeedCard extends Component {
+class HomeCard extends Component {
 	// onNavigate () {
 	// 	this.props.onNavigate.navigate('feedDetail');
 	// }
 	render () {
 		// console.log('Row', this.props.onNavigate);
-		const { company, points, feedRewardLogo } = this.props.feedCard;
+		const { company, points, feedRewardLogo } = this.props.homeCard;
 		const feedRewardLogoImages = {
-			foodpanda: require('../../images/foodpanda-logo.png'),
-			gv: require('../../images/gv-logo.png'),
-			forever21: require('../../images/forever21-logo.png'),
-			starbucks: require('../../images/starbucks-logo.png'),
-			beats: require('../../images/beats-logo.png'),
-			nike: require('../../images/nike-logo.png'),
-			gap: require('../../images/gap-logo.png'),
-			nikon: require('../../images/nikon-logo.png'),
-			apple: require('../../images/apple-logo.png'),
-			groupon: require('../../images/groupon-logo.png'),
-			sephora: require('../../images/sephora-logo.png'),
-			zara: require('../../images/zara-logo.png')
+			foodpanda: require('../../../images/foodpanda-logo.png'),
+			gv: require('../../../images/gv-logo.png'),
+			forever21: require('../../../images/forever21-logo.png'),
+			starbucks: require('../../../images/starbucks-logo.png'),
+			beats: require('../../../images/beats-logo.png'),
+			nike: require('../../../images/nike-logo.png'),
+			gap: require('../../../images/gap-logo.png'),
+			nikon: require('../../../images/nikon-logo.png'),
+			apple: require('../../../images/apple-logo.png'),
+			groupon: require('../../../images/groupon-logo.png'),
+			sephora: require('../../../images/sephora-logo.png'),
+			zara: require('../../../images/zara-logo.png')
 		};
 		return (
 			<View style={styles.viewStyle}>
@@ -134,4 +134,4 @@ const styles = {
 	}
 };
 
-export default FeedCard;
+export default HomeCard;

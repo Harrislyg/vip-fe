@@ -1,33 +1,50 @@
-import _ from 'lodash';
+import { Font } from 'expo';
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ScrollView, Dimensions, FlatList } from 'react-native';
+import { View, Text, ScrollView, Dimensions, FlatList, Image } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
-import { feedRewardsFetch } from '../../actions'
-import HomeOfferTop from './HomeOfferTop'
-import HomeOfferBtm from './HomeOfferBtm'
+import HomeSquareCard from './components/HomeSquareCard'
+import HomeOffersCard from './HomeOffersCard'
+import HomeTopHeader from './HomeTopHeader'
+import { homeRewardsFetch } from '../../actions'
+import { homeOffersFetch } from '../../actions'
 
+const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 class HomeScreen extends Component {
 	static navigationOptions = {
-		title: 'Account',
+		title: null,
+		headerLeft: (<Image source={require('../../images/max-logo.png')} style={{width: 30, height: 30, marginLeft: SCREEN_WIDTH / 2 - 15, marginTop: 10, marginBottom: 10}} />),
 		tabBarIcon: ({ tintColor }) => {
-			return <Icon name="person" type="octicons" size={29} color={tintColor} />
-
+			return <Icon name="home" size={29} color={tintColor} />
+		},
+		headerStyle: {
+			backgroundColor: '#fff'
 		}
 
 	}
 
-	componentWillMount () {
-		this.props.feedRewardsFetch()
+	state = {
+    fontLoaded: false
+	};
 
-	}
+	async componentDidMount() {
+    await Font.loadAsync({
+      'ABeeZee': require('../../assets/fonts/ABeeZee-Regular.ttf'),
+    });
 
-	renderTopRow (homeOffer) {
-    return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
+		this.props.homeRewardsFetch();
+		this.props.homeOffersFetch();
+
+    this.setState({ fontLoaded: true });
 
   }
+
+	// renderTopRow (homeOffer) {
+  //   return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
+	//
+  // }
 
 	render () {
 		return (
@@ -35,37 +52,44 @@ class HomeScreen extends Component {
 				style={styles.scrollView}
 				showsVerticalScrollIndicator = {false}
 			>
-				<Text style={styles.textStyle}>
-					Flash Offers
-				</Text>
-				<FlatList
-					contentContainerStyle={styles.topRowList}
-					horizontal={true}
-					keyExtractor={item => item.company}
-					enableEmptySections
-					data={this.props.homeOffer}
-	        renderItem={this.renderTopRow}
-					showsHorizontalScrollIndicator={false}
-					alwaysBounceHorizontal={true}
-				/>
-				<Text style={styles.textStyle}>
-					Earn Bonuses
-				</Text>
-				<FlatList
-					contentContainerStyle={styles.btmRowList}
-					horizontal={true}
-					enableEmptySections
-	        data={this.props.homeOffer}
-	        renderItem={({item}) => <HomeOfferBtm homeOffer={item} onNavigate={this.props.navigation} />}
-					keyExtractor={item => item.company}
-					showsHorizontalScrollIndicator={false}
-					alwaysBounceHorizontal={true}
-      	/>
+				{ this.state.fontLoaded ? (
+				<View>
+					<HomeTopHeader />
+					<View style={styles.separatorStyle}></View>
+					<Text style={styles.textStyle}>
+						UNLOCK REWARDS
+					</Text>
+					<View style={styles.lineStyle}></View>
+					<FlatList
+						contentContainerStyle={styles.feedRewardsCardStyle}
+						horizontal={true}
+						enableEmptySections
+						data={this.props.homeRewards}
+						renderItem={({item}) => <HomeSquareCard homeCard={item} onNavigate={this.props.navigation} />}
+						keyExtractor={item => item.company}
+						showsHorizontalScrollIndicator={false}
+						alwaysBounceHorizontal={true}
+	      	/>
+					<View style={styles.separatorStyle}></View>
+					<Text style={styles.textStyle}>
+						FEATURED OFFERS
+					</Text>
+					<View style={styles.lineStyle}></View>
+					<FlatList
+						contentContainerStyle={styles.feedOffersCardStyle}
+						enableEmptySections
+						data={this.props.homeOffers}
+						renderItem={({item}) => <HomeOffersCard homeCard={item} onNavigate={this.props.navigation} />}
+						keyExtractor={item => item.company}
+						showsVerticalScrollIndicator={false}
+						alwaysBounceVertical={true}
+					>
+					</FlatList>
+				</View>
+				) : null }
 			</ScrollView>
 		);
-
 	}
-
 }
 
 const styles = {
@@ -73,27 +97,45 @@ const styles = {
 		backgroundColor: '#fff'
 	},
 
-	topRowList: {
-  	flexDirection: 'row',
-  	flexWrap: 'wrap',
-		justifyContent: 'center'
+	logoStyle: {
+		width: 50,
+		height: 50
 	},
 
-	btmRowList: {
+	separatorStyle: {
+		height: SCREEN_HEIGHT / 50,
+		backgroundColor: '#F4F4F4'
+	},
+
+	lineStyle: {
+		height: 1.5,
+		backgroundColor: '#F4F4F4',
+		marginTop: 10
+	},
+
+	feedRewardsCardStyle: {
 		flexDirection: 'row',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		marginBottom: 15
 	},
 
 	textStyle: {
-		marginTop: 10,
-		marginLeft: 12
-	}
+		marginTop: 15,
+		marginLeft: 12,
+		color: '#8F8E94',
+		fontWeight: '600'
+	},
+
+	feedOffersCardStyle: {
+		flexDirection: 'column',
+		justifyContent: 'center'
+	},
 }
 
-const mapStateToProps = state => {
-  const homeOffer = state.home
-  return { homeOffer }
+const mapStateToProps = ({home}) => {
+  const {homeRewards, homeOffers} = home
+  return {homeRewards, homeOffers}
 
 }
 
-export default connect(mapStateToProps, {feedRewardsFetch}) (HomeScreen);
+export default connect(mapStateToProps, {homeRewardsFetch, homeOffersFetch}) (HomeScreen);
