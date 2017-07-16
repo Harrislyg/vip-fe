@@ -19,7 +19,7 @@ class OffersOnetime extends Component {
 
 	renderIcon (item) {
 		if (item.pointsTwo === '$1') {
-			return <Text><Image style={styles.iconStyle} source={rewardScrollImages['bolt']} /><Text style={styles.boldStyle}> {item.pointsOne}</Text><Text> per </Text><Text>spent</Text></Text>;
+			return <Text><Image style={styles.iconStyle} source={rewardScrollImages['bolt']} /><Text style={styles.boldStyle}> {item.pointsOne}</Text></Text>;
 		}
 		return <Text><Image style={styles.iconStyle} source={rewardScrollImages['piggy']} /><Text style={styles.boldStyle}> {item.pointsOne}</Text><Text> {item.pointsTwo}</Text></Text>;
 	}
