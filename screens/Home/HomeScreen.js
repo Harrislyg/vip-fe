@@ -41,11 +41,6 @@ class HomeScreen extends Component {
 
   }
 
-	// renderTopRow (homeOffer) {
-  //   return <HomeOfferTop key={homeOffer.company} homeOffer={homeOffer} />
-	//
-  // }
-
 	render () {
 		return (
 			<ScrollView
