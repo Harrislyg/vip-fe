@@ -59,7 +59,7 @@ class App extends React.Component {
 			tabBarPosition: 'bottom',
 			tabBarOptions: {
 				labelStyle: { fontSize: 10, marginTop: -5 },
-				activeTintColor: '#31EAD7'
+				activeTintColor: '#0DE47F'
 			},
 			lazy: true
 		});

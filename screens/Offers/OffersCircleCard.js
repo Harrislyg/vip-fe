@@ -43,7 +43,7 @@ class OffersCircleCard extends Component {
 						width={4}
 						fill={progress}
 						rotation={-360}
-						tintColor="#31EAD7"
+						tintColor="#0DE47F"
 						backgroundColor="#ffffff"
 						style={styles.containerStyle}
 					>

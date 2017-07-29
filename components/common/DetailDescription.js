@@ -20,12 +20,12 @@ class DetailDescription extends Component {
 				{ (this.props.type === "offer") && (
 					<Button
 					  onPress={this.props.onClick}
-					  // icon={{name: 'attachment', size: 30, color: '#31EAD7'}}
+					  // icon={{name: 'attachment', size: 30, color: '#39CA84'}}
 					  buttonStyle={this.props.active ? styles.active : styles.inactive}
 						// containerViewStyle={this.props.active ? styles.active : styles.inactive}
 					  textStyle={{ textAlign: 'center' }}
 					  title={this.props.active ? "Activated" : "Activate"}
-					  color={this.props.active ? "#ffffff" : "#31EAD7"}
+					  color={this.props.active ? "#ffffff" : "#39CA84"}
 					/>
 				)}
 				<Text style={{ fontSize: 18, fontWeight: 'bold', color: "#8F8E94", paddingLeft: SCREEN_WIDTH/18 , paddingTop: SCREEN_WIDTH/18 }}>{company} </Text>
@@ -43,16 +43,16 @@ const styles = {
 		// marginLeft: SCREEN_WIDTH/18,
 		backgroundColor: '#fff',
 		borderRadius: 5,
-		borderColor: "#31EAD7",
+		borderColor: "#39CA84",
 		borderWidth: 1,
 		height: SCREEN_HEIGHT/16,
 		marginTop: 5,
 		marginBottom: 5
 	},
 	active: {
-		backgroundColor: "#31EAD7",
+		backgroundColor: "#39CA84",
 		borderRadius: 5,
-		// borderColor: "#31EAD7",
+		// borderColor: "#39CA84",
 		// borderWidth: 1,
 		height: SCREEN_HEIGHT/16,
 		marginTop: 5,

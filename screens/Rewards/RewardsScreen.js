@@ -1,6 +1,8 @@
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { ScrollView, FlatList, View, Text, Image, Dimensions } from 'react-native';
+import { ScreenSeparator } from '../../components/common/ScreenSeparator';
+import { ScreenLineSeparator } from '../../components/common/ScreenLineSeparator';
 import { Button, Icon } from 'react-native-elements';
 import Detail from "../../components/common/Detail";
 import DetailHeader from "../../components/common/DetailHeader";
@@ -41,20 +43,20 @@ class RewardsScreen extends Component {
 						<Text style={styles.pointStyle}>7535</Text>
 					</View>
 				</View>
-				<View style={styles.separatorStyle}></View>
+				<ScreenSeparator />
 				<View >
 					<Text style={styles.textStyle}>
 						SEARCH BY BRAND
 					</Text>
-					<View style={styles.lineStyle}></View>
+					<ScreenLineSeparator />
 					<RewardBrands searchReward={rewardSearchData}/>
 				</View>
-				<View style={styles.separatorStyle}></View>
+				<ScreenSeparator />
 				<View >
 					<Text style={styles.textStyle}>
 						AVAILABLE REWARDS
 					</Text>
-					<View style={styles.lineStyle}></View>
+					<ScreenLineSeparator />
 					<FlatList
 						contentContainerStyle={styles.feedOffersCardStyle}
 						enableEmptySections
@@ -95,7 +97,7 @@ const styles = {
 		width: SCREEN_WIDTH / 7,
 		height: SCREEN_HEIGHT / 27,
 		borderRadius: 2,
-		backgroundColor: '#31EAD7',
+		backgroundColor: '#0DE47F',
 		padding: 0
 	},
 

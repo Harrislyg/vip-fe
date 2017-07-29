@@ -1,13 +1,14 @@
 import { Font } from 'expo';
-import React, {Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, ScrollView, Dimensions, FlatList, Image } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
-import HomeSquareCard from './components/HomeSquareCard'
-import HomeOffersCard from './HomeOffersCard'
-import HomeTopHeader from './HomeTopHeader'
-import { homeRewardsFetch } from '../../actions'
-import { homeOffersFetch } from '../../actions'
+import { ScreenSeparator } from '../../components/common/ScreenSeparator';
+import { ScreenLineSeparator } from '../../components/common/ScreenLineSeparator';
+import HomeSquareCard from './components/HomeSquareCard';
+import HomeOffersCard from './HomeOffersCard';
+import HomeTopHeader from './HomeTopHeader';
+import { homeRewardsFetch, homeOffersFetch } from '../../actions';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -15,7 +16,7 @@ const SCREEN_HEIGHT = Dimensions.get('window').height;
 class HomeScreen extends Component {
 	static navigationOptions = {
 		title: null,
-		headerLeft: (<Image source={require('../../images/max-logo.png')} style={{width: 30, height: 30, marginLeft: SCREEN_WIDTH / 2 - 15, marginTop: 10, marginBottom: 10}} />),
+		headerLeft: (<Image source={require('../../images/max-logo.png')} style={{width: 30, height: 30, padding: 0, marginLeft: SCREEN_WIDTH / 2 - 15, marginTop: 10, marginBottom: 10}} />),
 		tabBarIcon: ({ tintColor }) => {
 			return <Icon name="home" size={29} color={tintColor} />
 		},
@@ -50,13 +51,13 @@ class HomeScreen extends Component {
 				{ this.state.fontLoaded ? (
 				<View>
 					<HomeTopHeader />
-					<View style={styles.separatorStyle}></View>
+					<ScreenSeparator />
 					<Text style={styles.textStyle}>
 						UNLOCK REWARDS
 					</Text>
-					<View style={styles.lineStyle}></View>
+					<ScreenLineSeparator />
 					<FlatList
-						contentContainerStyle={styles.feedRewardsCardStyle}
+						contentContainerStyle={styles.homeRewardsCardStyle}
 						horizontal={true}
 						enableEmptySections
 						data={this.props.homeRewards}
@@ -65,13 +66,13 @@ class HomeScreen extends Component {
 						showsHorizontalScrollIndicator={false}
 						alwaysBounceHorizontal={true}
 	      	/>
-					<View style={styles.separatorStyle}></View>
+					<ScreenSeparator />
 					<Text style={styles.textStyle}>
 						FEATURED OFFERS
 					</Text>
-					<View style={styles.lineStyle}></View>
+					<ScreenLineSeparator />
 					<FlatList
-						contentContainerStyle={styles.feedOffersCardStyle}
+						contentContainerStyle={styles.homeOffersCardStyle}
 						enableEmptySections
 						data={this.props.homeOffers}
 						renderItem={({item}) => <HomeOffersCard homeCard={item} onNavigate={this.props.navigation} />}
@@ -108,7 +109,7 @@ const styles = {
 		marginTop: 10
 	},
 
-	feedRewardsCardStyle: {
+	homeRewardsCardStyle: {
 		flexDirection: 'row',
 		justifyContent: 'center',
 		marginBottom: 15
@@ -121,7 +122,7 @@ const styles = {
 		fontWeight: '600'
 	},
 
-	feedOffersCardStyle: {
+	homeOffersCardStyle: {
 		flexDirection: 'column',
 		justifyContent: 'center'
 	},

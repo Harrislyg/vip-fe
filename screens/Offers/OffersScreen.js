@@ -2,6 +2,8 @@ import { Font } from 'expo';
 import React, {Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, FlatList, ActivityIndicator, ScrollView, Image, Dimensions } from 'react-native';
+import { ScreenSeparator } from '../../components/common/ScreenSeparator';
+import { ScreenLineSeparator } from '../../components/common/ScreenLineSeparator';
 import { Button, Icon, List, ListItem, SearchBar } from 'react-native-elements';
 import { offersPerpetualFetch } from '../../actions';
 import OffersOnetime from './OffersOnetime';
@@ -78,27 +80,27 @@ class OffersScreen extends Component {
 								<Text style={styles.pointStyle}>7535</Text>
 							</View>
 						</View> */}
-						<View style={styles.separatorStyle}></View>
+						<ScreenSeparator />
 						<View style={styles.offersActivatedStyle}>
 							<Text style={styles.textStyle}>
 								ACTIVE OFFERS
 							</Text>
-							<View style={styles.lineStyle}></View>
+							<ScreenLineSeparator />
 							<OffersActivated onNavigate={this.props.navigation}></OffersActivated>
 						</View>
-						<View style={styles.separatorStyle}></View>
+						<ScreenSeparator />
 						<View style={styles.offersOnetimeStyle}>
 							<Text style={styles.textStyle}>
 								BONUS OFFERS
 							</Text>
-							<View style={styles.lineStyle}></View>
+							<ScreenLineSeparator />
 							<OffersOnetime onNavigate={this.props.navigation}></OffersOnetime>
 						</View>
-						<View style={styles.separatorStyle}></View>
+						<ScreenSeparator />
 						<Text style={styles.textStyle}>
 							ONGOING OFFERS
 						</Text>
-						<View style={styles.lineStyle}></View>
+						<ScreenLineSeparator />
 						<FlatList
 							data={this.props.offersPerpetual}
 							renderItem={({ item }) => (
@@ -145,7 +147,7 @@ const styles = {
 		width: SCREEN_WIDTH / 7,
 		height: SCREEN_HEIGHT / 27,
 		borderRadius: 2,
-		backgroundColor: '#31EAD7',
+		backgroundColor: '#39CA84',
 		padding: 0
 	},
 

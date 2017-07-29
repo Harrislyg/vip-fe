@@ -30,7 +30,7 @@ class OfferProgress extends Component {
 					  width={6}
 					  fill={0}
 					  rotation={-360}
-					  tintColor="#31EAD7"
+					  tintColor="#0DE47F"
 					  backgroundColor="#ffffff"
 					  style={styles.container}
 					>

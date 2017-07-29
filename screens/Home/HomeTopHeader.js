@@ -26,7 +26,7 @@ const styles = {
 	},
 
 	pointStyle: {
-		color: '#31EAD7',
+		color: '#0DE47F',
 		fontFamily: 'ABeeZee',
 		fontSize: 40,
 		fontWeight: 'bold'
@@ -37,7 +37,7 @@ const styles = {
 		width: SCREEN_WIDTH / 11,
 		height: SCREEN_HEIGHT / 36,
 		borderRadius: 2,
-		backgroundColor: '#31EAD7',
+		backgroundColor: '#0DE47F',
 		padding: 0
 	},
 

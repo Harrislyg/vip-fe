@@ -25,7 +25,8 @@ class RewardProgress extends Component {
 						borderWidth={0}
 						progress={ 7535 / points  }
 						width={200}
-						color={"rgba(50, 234, 214, 1)"}
+						color={'#0DE47F'}
+						// color={"rgba(50, 234, 214, 1)"}
 						unfilledColor={"rgba(226, 226, 226, 1)"}
 						width={SCREEN_WIDTH - (SCREEN_WIDTH/9) - 24}
 					/>
