@@ -1,12 +1,12 @@
 import React, {Component } from 'react';
-import { ScrollView, FlatList, View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { offersActivatedFetch } from '../../actions';
-import RewardProgress from "../../components/common/RewardProgress";
-import DetailHeader from "../../components/common/DetailHeader";
+import RewardProgress from '../../components/common/RewardProgress';
+import DetailHeader from '../../components/common/DetailHeader';
 import { Bar } from 'react-native-progress';
 import { Card } from 'react-native-elements';
-import { rewardScrollImages, rewardCardImages } from "../../images/allImages"
+import { rewardScrollImages, rewardCardImages } from '../../images/allImages';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -24,9 +24,8 @@ class RewardBrands extends Component {
 		// const ll = require('../../images/starbucks-bg.png');
 		// const check = require('../../images/hnm-logo.png');
 
-		const { company, points, value, feedRewardLogo, description, feedRewardBg } = this.props.feedCard;
-		// console.log("Data rec", this.props.feedCard);
-
+		const { points, value, feedRewardLogo, feedRewardBg } = this.props.feedCard;
+		// console.log('Data rec', this.props.feedCard);
 
 		// const feedRewardLogoImages = {
 		// 	foodpanda: require('../../images/foodpanda-logo.png'),
@@ -43,37 +42,35 @@ class RewardBrands extends Component {
 		// 	zara: require('../../images/zara-logo.png')
 		// };
 
-
 		return (
-				<Card containerStyle={styles.containerStyle}>
-					<TouchableOpacity
-						onPress={this.onNavigate.bind(this)}
-						activeOpacity={1}
-						>
-						<Image
-							style={styles.logoStyle}
-							source={rewardCardImages[feedRewardBg]}
-							resizeMode="cover"
+			<Card containerStyle={styles.containerStyle}>
+				<TouchableOpacity
+					onPress={this.onNavigate.bind(this)}
+					activeOpacity={1}
+					>
+					<Image
+						style={styles.logoStyle}
+						source={rewardCardImages[feedRewardBg]}
+						resizeMode="cover"
+					/>
+					<View style={styles.row}>
+						<Image style={styles.check} source={rewardScrollImages[feedRewardLogo]} />
+						<Text style={styles.title}>${value} Gift Card </Text>
+					</View>
+					<View style={styles.lower}>
+						<Text style={styles.text}>Worth <Text style={{fontWeight: 'bold'}}> {points}</Text> points </Text>
+						<Bar
+							height={8}
+							borderWidth={0}
+							progress={7535 / points}
+							width={200}
+							color={'#0DE47F'}
+							unfilledColor={'rgba(226, 226, 226, 1)'}
 						/>
-						<View style={styles.row}>
-							<Image style={styles.check} source={rewardScrollImages[feedRewardLogo]}/>
-							<Text style={styles.title}>${value} Gift Card </Text>
-						</View>
-						<View style={styles.lower}>
-							<Text style={styles.text}>Worth <Text style={{fontWeight: "bold"}}> {points}</Text> points </Text>
-							<Bar
-								height={8}
-								borderWidth={0}
-								progress={7535 / points}
-								width={200}
-								color={'#0DE47F'}
-								unfilledColor={"rgba(226, 226, 226, 1)"}
-								width={SCREEN_WIDTH - (SCREEN_WIDTH/9) - 24}
-							/>
-							<Text style={styles.text}>earned <Text style={{fontWeight: "bold"}}>{(753500 / points).toFixed(0)}%</Text> of {points} points</Text>
-						</View>
-					</TouchableOpacity>
-				</Card>
+						<Text style={styles.text}>earned <Text style={{fontWeight: 'bold'}}>{(753500 / points).toFixed(0)}%</Text> of {points} points</Text>
+					</View>
+				</TouchableOpacity>
+			</Card>
 		);
 	}
 
@@ -105,57 +102,54 @@ const styles = {
 
 	text1: {
 		backgroundColor: 'transparent',
-		fontWeight: "bold",
+		fontWeight: 'bold',
 		fontSize: 24,
-		color: "#ffffff"
+		color: '#ffffff'
 	},
 
 	title: {
-		display: "flex",
-		alignItems: "center",
-		color: "#8F8E94",
+		display: 'flex',
+		alignItems: 'center',
+		color: '#8F8E94',
 		fontSize: 14,
-		fontWeight: "bold",
-		paddingLeft: 11,
+		fontWeight: 'bold',
+		paddingLeft: 11
 	},
 	status: {
 		paddingLeft: 5,
-		paddingRight: 10,
+		paddingRight: 10
 	},
 	lower: {
-		display: "flex",
+		display: 'flex',
 		paddingRight: 12,
-		paddingLeft: 12,
+		paddingLeft: 12
 	},
 	main: {
-		// marginLeft: SCREEN_WIDTH/18,
-		// marginRight: SCREEN_WIDTH/18,
-		// marginBottom: SCREEN_WIDTH/18,
 		borderWidth: 2,
-		borderColor: "#F5F5F5",
+		borderColor: '#F5F5F5',
 		borderRadius: 6,
 		borderTopRightRadius: 0,
-		borderTopLeftRadius: 0,
+		borderTopLeftRadius: 0
 	},
 	row: {
-		display: "flex",
-		alignItems: "center",
-		flexDirection: "row",
+		display: 'flex',
+		alignItems: 'center',
+		flexDirection: 'row',
 		borderBottomWidth: 1,
-		borderBottomColor: "#F5F5F5",
-		padding: 10,
+		borderBottomColor: '#F5F5F5',
+		padding: 10
 	},
 	check: {
 		width: 30,
 		height: 30,
-		borderRadius: 15,
+		borderRadius: 15
 	},
 	text: {
-		color: "#8F8E94",
+		color: '#8F8E94',
 		fontSize: 14,
 		paddingTop: 6,
-		paddingBottom: 6,
-	},
+		paddingBottom: 6
+	}
 
 };
 
